@@ -51,6 +51,7 @@ public class GuiChat extends GuiScreen
                     mc_06.field_6308_u.func_552_a(".seed - Get current world seed");
                     mc_06.field_6308_u.func_552_a(".god - Toggle God mode");
                     mc_06.field_6308_u.func_552_a(".fly - Toggle Fly mode");
+                    mc_06.field_6308_u.func_552_a(".instamine - Toggle Instant Block-Break");
                     mc_06.field_6308_u.func_552_a(".sun - Makes it daytime");
                     mc_06.field_6308_u.func_552_a(".nick <name> - Change your name");
                     mc_06.field_6308_u.func_552_a(".speed <mul> - Speed multiplier (default: 1.00)");
@@ -83,45 +84,74 @@ public class GuiChat extends GuiScreen
                         mc_06.field_6322_g.fly = true;
                         mc_06.field_6308_u.func_552_a("Fly mode Enabled");
                     }
-                } else if (args[0].equals(".speed")) {
-                    mc_06.field_6322_g.spd = Double.parseDouble(args[1]);
+                } else if (args[0].equals(".instamine")) {
+                    if (mc_06.field_6322_g.instaBreak) {
+                        mc_06.field_6322_g.instaBreak = false;
+                        mc_06.field_6308_u.func_552_a("Instant Break Disabled");
+                    } else {
+                        mc_06.field_6322_g.instaBreak = true;
+                        mc_06.field_6308_u.func_552_a("Instant Break Enabled");
+                    }
+                }
+                else if (args[0].equals(".speed")) {
+                    if(args.length >= 2) {
+                        mc_06.field_6322_g.spd = Double.parseDouble(args[1]);
+                    }
+                    else {
+                        mc_06.field_6308_u.func_552_a(".speed <mul>");
+                    }
                 } else if (args[0].equals(".sun")) {
                     mc_06.field_6324_e.setWorldTime(0);
                 } else if (args[0].equals(".nick"))
                 {
-                    mc_06.field_6322_g.field_771_i = args[1];
+                    if(args.length >= 2) {
+                        mc_06.field_6322_g.field_771_i = args[1];
+                    }
+                    else {
+                        mc_06.field_6308_u.func_552_a(".nick <name>");
+                    }
+
                 }
                 else if(args[0].equals(".tp"))
                 {
+                    if(args.length >= 3) {
+                        int posX = Integer.parseInt(args[1]);
+                        int posZ = Integer.parseInt(args[2]);
 
-                    int posX =  Integer.parseInt(args[1]);
-                    int posZ =  Integer.parseInt(args[2]);
+                        int _spawnX = mc_06.field_6324_e.spawnX;
+                        int _spawnZ = mc_06.field_6324_e.spawnZ;
 
-                    int _spawnX = mc_06.field_6324_e.spawnX;
-                    int _spawnZ = mc_06.field_6324_e.spawnZ;
+                        mc_06.field_6324_e.spawnZ = posZ;
+                        mc_06.field_6324_e.spawnX = posX;
 
-                    mc_06.field_6324_e.spawnZ = posZ;
-                    mc_06.field_6324_e.spawnX = posX;
+                        mc_06.tp();
 
-                    mc_06.tp();
+                        mc_06.field_6324_e.spawnZ = _spawnZ;
+                        mc_06.field_6324_e.spawnX = _spawnX;
+                    }
+                    else {
+                        mc_06.field_6308_u.func_552_a(".tp <x> <z>");
+                    }
 
-                    mc_06.field_6324_e.spawnZ = _spawnZ;
-                    mc_06.field_6324_e.spawnX = _spawnX;
                 }
                 else if(args[0].equals(".give"))
                 {
                     int id = 0;
                     int count = 0;
-                    if(args.length == 3) {
-                        id = Integer.parseInt(args[1]);
-                        count = Integer.parseInt(args[2]);
+                    if(args.length >= 2) {
+                        if (args.length == 3) {
+                            id = Integer.parseInt(args[1]);
+                            count = Integer.parseInt(args[2]);
+                        } else if (args.length == 2) {
+                            id = Integer.parseInt(args[1]);
+                            count = 1;
+                        }
+                        mc_06.field_6322_g.func_444_a(new ItemStack(id, count), false);
                     }
-                    else if(args.length == 2)
+                    else
                     {
-                        id = Integer.parseInt(args[1]);
-                        count = 1;
+                        mc_06.field_6308_u.func_552_a(".give <id> [amount]");
                     }
-                    mc_06.field_6322_g.func_444_a(new ItemStack(id, count), false);
                 }
                 else
                 {
