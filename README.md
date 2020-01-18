@@ -4,7 +4,7 @@ A "Hacked Client" for Minecraft Alpha 1.2.2b
 
 To build: 
 1) Download MCP 2.2a  https://minecraft.gamepedia.com/Programs_and_editors/Mod_Coder_Pack
-2) DragnDrop 1.2.2b.jar into jars/ folder along with natives and lwgl.jar and such libs
+2) DragnDrop 1.2.2b.jar into jars/bin folder along with natives and lwgl.jar and such libs
 3) Install JDK 1.6_17
 4) Run Decompile.bat
 5) Copy patched source files into Sources/
