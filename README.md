@@ -19,6 +19,7 @@ EntityPlayerSP
 GuiChat
 GuiIngame
 Minecraft
+Block
 ```
 9) Run reobfs.bat
 
