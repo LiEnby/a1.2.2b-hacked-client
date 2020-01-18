@@ -55,10 +55,10 @@ public class GuiChat extends GuiScreen
                     mc_06.field_6308_u.func_552_a(".sun - Makes it daytime");
                     mc_06.field_6308_u.func_552_a(".nick <name> - Change your name");
                     mc_06.field_6308_u.func_552_a(".speed <mul> - Speed multiplier (default: 1.00)");
-                    mc_06.field_6308_u.func_552_a(".tp <x> <y> <z> - Teleport to location");
+                    mc_06.field_6308_u.func_552_a(".fp [name] - Find player location");
                     mc_06.field_6308_u.func_552_a(".vel <x> <y> <z> - Give yourself Velocity");
-                    mc_06.field_6308_u.func_552_a(".resp <x> <z> - Respawn to location");
-                    mc_06.field_6308_u.func_552_a(".give <id> - Give yourself an itemid");
+                    mc_06.field_6308_u.func_552_a(".tp <x> <z> - \"Respawn\" to location");
+                    mc_06.field_6308_u.func_552_a(".give <id> [amount] - Give yourself an itemid");
                 } else if (args[0].equals(".showcoords")) {
                     if (showCoords) {
                         showCoords = false;
@@ -114,58 +114,26 @@ public class GuiChat extends GuiScreen
                     }
 
                 }
-                else if(args[0].equals(".tp"))
+                else if(args[0].equals(".fp"))
                 {
-                    if(args.length >= 4)
+
+                    int noPlayers = mc_06.field_6324_e.playerEntities.size();
+                    for (int playerNo = 0; playerNo < noPlayers; playerNo++)
                     {
-                        double newX = 0;
-                        double newY = 0;
-                        double newZ = 0;
+                        EntityPlayer player = (EntityPlayer)mc_06.field_6324_e.playerEntities.get(playerNo);
 
-                        if(!args[1].startsWith("~"))
+                        if(args.length == 2)
                         {
-                            newX= Double.parseDouble(args[1]);
+                            if(player.field_771_i.equals(args[1]))
+                            {
+                                mc_06.field_6308_u.func_552_a(player.field_771_i +" X: "+String.valueOf(Math.floor(player.posX))+ " Y: "+String.valueOf(Math.floor(player.posY))+" Z: "+String.valueOf(Math.floor(player.posZ)));
+                            }
                         }
-                        else if(args[1].equals("~"))
-                        {
-                            newY = mc_06.field_6322_g.posX;
+                        else {
+                            mc_06.field_6308_u.func_552_a(player.field_771_i + " X: " + String.valueOf(Math.floor(player.posX)) + " Y: " + String.valueOf(Math.floor(player.posY)) + "Z: " + String.valueOf(Math.floor(player.posZ)));
                         }
-                        else
-                        {
-                            newX = mc_06.field_6322_g.posX + Double.parseDouble(args[1].substring(1));
-                        }
-
-                        if(!args[2].startsWith("~"))
-                        {
-                            newY= Double.parseDouble(args[2]);
-                        }
-                        else if(args[2].equals("~"))
-                        {
-                            newY = mc_06.field_6322_g.posY;
-                        }
-                        else
-                        {
-                            newY = mc_06.field_6322_g.posY + Double.parseDouble(args[2].substring(1));
-                        }
-
-                        if(!args[3].startsWith("~"))
-                        {
-                            newZ= Double.parseDouble(args[3]);
-                        }
-                        else if(args[3].equals("~"))
-                        {
-                            newZ = mc_06.field_6322_g.posZ;
-                        }
-                        else
-                        {
-                            newZ = mc_06.field_6322_g.posZ + Double.parseDouble(args[3].substring(1));
-                        }
-
-                        mc_06.field_6322_g.setPosition(newX,newY,newZ);
                     }
-                    else {
-                        mc_06.field_6308_u.func_552_a(".tp <x> <y> <z>");
-                    }
+
                 }
                 else if(args[0].equals(".vel"))
                 {
@@ -183,11 +151,37 @@ public class GuiChat extends GuiScreen
                         mc_06.field_6308_u.func_552_a(".vel <x> <y> <z>");
                     }
                 }
-                else if(args[0].equals(".resp"))
+                else if(args[0].equals(".tp"))
                 {
                     if(args.length >= 3) {
-                        int posX = Integer.parseInt(args[1]);
-                        int posZ = Integer.parseInt(args[2]);
+                        int posX = 0;
+                        int posZ = 0;
+
+                        if(!args[1].startsWith("~"))
+                        {
+                            posX= Integer.parseInt(args[1]);
+                        }
+                        else if(args[1].equals("~"))
+                        {
+                            posX = (int)Math.round(mc_06.field_6322_g.posX);
+                        }
+                        else
+                        {
+                            posX = (int)Math.round(mc_06.field_6322_g.posX) + Integer.parseInt(args[1].substring(1));
+                        }
+
+                        if(!args[2].startsWith("~"))
+                        {
+                            posZ= Integer.parseInt(args[2]);
+                        }
+                        else if(args[2].equals("~"))
+                        {
+                            posZ = (int)Math.round(mc_06.field_6322_g.posZ);
+                        }
+                        else
+                        {
+                            posZ = (int)Math.round(mc_06.field_6322_g.posZ) + Integer.parseInt(args[2].substring(1));
+                        }
 
                         int _spawnX = mc_06.field_6324_e.spawnX;
                         int _spawnZ = mc_06.field_6324_e.spawnZ;
@@ -201,7 +195,7 @@ public class GuiChat extends GuiScreen
                         mc_06.field_6324_e.spawnX = _spawnX;
                     }
                     else {
-                        mc_06.field_6308_u.func_552_a(".resp <x> <z>");
+                        mc_06.field_6308_u.func_552_a(".tp <x> <z>");
                     }
 
                 }
@@ -217,7 +211,17 @@ public class GuiChat extends GuiScreen
                             id = Integer.parseInt(args[1]);
                             count = 1;
                         }
-                        mc_06.field_6322_g.func_444_a(new ItemStack(id, count), false);
+                        ItemStack itm;
+                        itm = new ItemStack(id, count);
+
+                        try {
+                            itm.getMaxStackSize();
+                        }catch (NullPointerException e)
+                        {
+                            mc_06.field_6308_u.func_552_a(String.valueOf(id)+" Is not a valid ID!");
+                            return;
+                        }
+                        mc_06.field_6322_g.inventory.addItemStackToInventory(itm);
                     }
                     else
                     {
