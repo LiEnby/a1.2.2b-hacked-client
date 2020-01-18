@@ -10,7 +10,7 @@ To build:
 5) Copy patched source files into Sources/
 6) Run Recompile.bat
 7)
-in conf/client_obfuscation.bat add the following
+in conf/client_obfuscation.txt add the following
 ```
 Entity
 EntityLiving
