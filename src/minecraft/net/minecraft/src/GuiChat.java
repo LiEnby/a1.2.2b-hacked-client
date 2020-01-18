@@ -55,7 +55,9 @@ public class GuiChat extends GuiScreen
                     mc_06.field_6308_u.func_552_a(".sun - Makes it daytime");
                     mc_06.field_6308_u.func_552_a(".nick <name> - Change your name");
                     mc_06.field_6308_u.func_552_a(".speed <mul> - Speed multiplier (default: 1.00)");
-                    mc_06.field_6308_u.func_552_a(".tp <x> <z> - TP to location");
+                    mc_06.field_6308_u.func_552_a(".tp <x> <y> <z> - Teleport to location");
+                    mc_06.field_6308_u.func_552_a(".vel <x> <y> <z> - Give yourself Velocity");
+                    mc_06.field_6308_u.func_552_a(".resp <x> <z> - Respawn to location");
                     mc_06.field_6308_u.func_552_a(".give <id> - Give yourself an itemid");
                 } else if (args[0].equals(".showcoords")) {
                     if (showCoords) {
@@ -114,6 +116,75 @@ public class GuiChat extends GuiScreen
                 }
                 else if(args[0].equals(".tp"))
                 {
+                    if(args.length >= 4)
+                    {
+                        double newX = 0;
+                        double newY = 0;
+                        double newZ = 0;
+
+                        if(!args[1].startsWith("~"))
+                        {
+                            newX= Double.parseDouble(args[1]);
+                        }
+                        else if(args[1].equals("~"))
+                        {
+                            newY = mc_06.field_6322_g.posX;
+                        }
+                        else
+                        {
+                            newX = mc_06.field_6322_g.posX + Double.parseDouble(args[1].substring(1));
+                        }
+
+                        if(!args[2].startsWith("~"))
+                        {
+                            newY= Double.parseDouble(args[2]);
+                        }
+                        else if(args[2].equals("~"))
+                        {
+                            newY = mc_06.field_6322_g.posY;
+                        }
+                        else
+                        {
+                            newY = mc_06.field_6322_g.posY + Double.parseDouble(args[2].substring(1));
+                        }
+
+                        if(!args[3].startsWith("~"))
+                        {
+                            newZ= Double.parseDouble(args[3]);
+                        }
+                        else if(args[3].equals("~"))
+                        {
+                            newZ = mc_06.field_6322_g.posZ;
+                        }
+                        else
+                        {
+                            newZ = mc_06.field_6322_g.posZ + Double.parseDouble(args[3].substring(1));
+                        }
+
+                        mc_06.field_6322_g.setPosition(newX,newY,newZ);
+                    }
+                    else {
+                        mc_06.field_6308_u.func_552_a(".tp <x> <y> <z>");
+                    }
+                }
+                else if(args[0].equals(".vel"))
+                {
+                    if(args.length == 4)
+                    {
+                        double motionX = Double.parseDouble(args[1]);
+                        double motionY = Double.parseDouble(args[2]);
+                        double motionZ = Double.parseDouble(args[3]);
+                        mc_06.field_6322_g.motionX += motionX;
+                        mc_06.field_6322_g.motionY += motionY;
+                        mc_06.field_6322_g.motionZ += motionZ;
+                    }
+                    else
+                    {
+                        mc_06.field_6308_u.func_552_a(".vel <x> <y> <z>");
+                    }
+                }
+                else if(args[0].equals(".resp"))
+                {
                     if(args.length >= 3) {
                         int posX = Integer.parseInt(args[1]);
                         int posZ = Integer.parseInt(args[2]);
@@ -124,13 +195,13 @@ public class GuiChat extends GuiScreen
                         mc_06.field_6324_e.spawnZ = posZ;
                         mc_06.field_6324_e.spawnX = posX;
 
-                        mc_06.tp();
+                        mc_06.func_6239_p();
 
                         mc_06.field_6324_e.spawnZ = _spawnZ;
                         mc_06.field_6324_e.spawnX = _spawnX;
                     }
                     else {
-                        mc_06.field_6308_u.func_552_a(".tp <x> <z>");
+                        mc_06.field_6308_u.func_552_a(".resp <x> <z>");
                     }
 
                 }

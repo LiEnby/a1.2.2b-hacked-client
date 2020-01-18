@@ -1366,26 +1366,6 @@ public abstract class Minecraft
         func_6255_d("Respawning");
     }
 
-    public void tp()
-    {
-        if(!field_6324_e.field_4209_q.func_6477_d())
-        {
-            func_6237_k();
-        }
-        field_6324_e.func_4076_b();
-        if(field_6322_g != null)
-        {
-            field_6324_e.func_607_d(field_6322_g);
-        }
-        field_6322_g = (EntityPlayerSP)field_6327_b.func_4087_b(field_6324_e);
-        field_6322_g.func_374_q();
-        field_6327_b.func_6476_a(field_6322_g);
-        field_6324_e.func_608_a(field_6322_g);
-        field_6322_g.field_787_a = new MovementInputFromOptions(field_6304_y);
-        field_6327_b.func_6473_b(field_6322_g);
-        func_6255_d("Teleporting");
-    }
-
     public static void func_6269_a(String s, String s1)
     {
         func_6253_a(s, s1, null);
