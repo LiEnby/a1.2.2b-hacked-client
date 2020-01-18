@@ -15,6 +15,7 @@ in conf/client_obfuscation.txt add the following
 ```
 Entity
 EntityLiving
+EntityPlayer
 EntityPlayerSP
 GuiChat
 GuiIngame
