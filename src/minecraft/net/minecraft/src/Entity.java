@@ -65,6 +65,7 @@ public abstract class Entity
 
     protected void func_374_q()
     {
+
         if(worldObj_09 == null)
         {
             return;
@@ -229,33 +230,40 @@ public abstract class Entity
     {
         AxisAlignedBB axisalignedbb = boundingBox.getOffsetBoundingBox(d, d1, d2);
         List list = worldObj_09.getCollidingBoundingBoxes_00(this, axisalignedbb);
-        if(list.size() > 0)
-        {
+        if (list.size() > 0) {
             return false;
         }
         return !worldObj_09.getIsAnyLiquid(axisalignedbb);
     }
-
     public void moveEntity(double d, double d1, double d2)
     {
-        if(field_633_aN)
-        {
+
+        if (field_633_aN) {
             boundingBox.offset(d, d1, d2);
             posX = (boundingBox.minX_00 + boundingBox.maxX) / 2D;
-            posY = (boundingBox.minY + (double)yOffset_00) - (double)field_635_aL;
+            posY = (boundingBox.minY + (double) yOffset_00) - (double) field_635_aL;
             posZ = (boundingBox.minZ + boundingBox.maxZ) / 2D;
             return;
         }
+
         double d3 = posX;
         double d4 = posZ;
         double d5 = d;
         double d6 = d1;
         double d7 = d2;
         AxisAlignedBB axisalignedbb = boundingBox.copy();
-        boolean flag = onGround_00 && func_381_o();
+        boolean flag;
+        if(!fly) {
+            flag = onGround_00 && func_381_o();
+        }
+        else
+        {
+            flag = false;
+        }
         if(flag)
         {
             double d8 = 0.050000000000000003D;
+
             for(; d != 0.0D && worldObj_09.getCollidingBoundingBoxes_00(this, boundingBox.getOffsetBoundingBox(d, -1D, 0.0D)).size() == 0; d5 = d)
             {
                 if(d < d8 && d >= -d8)
@@ -296,31 +304,34 @@ public abstract class Entity
         }
 
         boundingBox.offset(0.0D, d1, 0.0D);
-        if(!field_596_az && d6 != d1)
-        {
+
+        if (!field_596_az && d6 != d1) {
             d = d1 = d2 = 0.0D;
         }
+
         boolean flag1 = onGround_00 || d6 != d1 && d6 < 0.0D;
+
         for(int j = 0; j < list.size(); j++)
         {
             d = ((AxisAlignedBB)list.get(j)).func_1163_a(boundingBox, d);
         }
 
         boundingBox.offset(d, 0.0D, 0.0D);
-        if(!field_596_az && d5 != d)
-        {
+
+        if (!field_596_az && d5 != d) {
             d = d1 = d2 = 0.0D;
         }
+
         for(int k = 0; k < list.size(); k++)
         {
             d2 = ((AxisAlignedBB)list.get(k)).func_1162_c(boundingBox, d2);
         }
 
         boundingBox.offset(0.0D, 0.0D, d2);
-        if(!field_596_az && d7 != d2)
-        {
+        if (!field_596_az && d7 != d2) {
             d = d1 = d2 = 0.0D;
         }
+
         if(field_634_aM > 0.0F && flag1 && field_635_aL < 0.05F && (d5 != d || d7 != d2))
         {
             double d9 = d;
@@ -338,8 +349,7 @@ public abstract class Entity
             }
 
             boundingBox.offset(0.0D, d1, 0.0D);
-            if(!field_596_az && d6 != d1)
-            {
+            if (!field_596_az && d6 != d1) {
                 d = d1 = d2 = 0.0D;
             }
             for(int k2 = 0; k2 < list1.size(); k2++)
@@ -378,7 +388,7 @@ public abstract class Entity
         posZ = (boundingBox.minZ + boundingBox.maxZ) / 2D;
         field_599_aw = d5 != d || d7 != d2;
         field_598_ax = d6 != d1;
-                if(!fly) {
+        if(!fly) {
 
             onGround_00 = d6 != d1 && d6 < 0.0D;
         }

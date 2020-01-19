@@ -6,6 +6,9 @@ package net.minecraft.src;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Keyboard;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GuiChat extends GuiScreen
 {
 
@@ -53,9 +56,11 @@ public class GuiChat extends GuiScreen
                     mc_06.field_6308_u.func_552_a(".fly - Toggle Fly mode");
                     mc_06.field_6308_u.func_552_a(".instamine - Toggle Instant Block-Break");
                     mc_06.field_6308_u.func_552_a(".sun - Makes it daytime");
+                    mc_06.field_6308_u.func_552_a(".nether - Enter/Leave the Nether");
                     mc_06.field_6308_u.func_552_a(".nick <name> - Change your name");
                     mc_06.field_6308_u.func_552_a(".speed <mul> - Speed multiplier (default: 1.00)");
                     mc_06.field_6308_u.func_552_a(".fp [name] - Find player location");
+                    mc_06.field_6308_u.func_552_a(".invsee [name] - See players \"inventory\"");
                     mc_06.field_6308_u.func_552_a(".vel <x> <y> <z> - Give yourself Velocity");
                     mc_06.field_6308_u.func_552_a(".tp <x> <z> - \"Respawn\" to location");
                     mc_06.field_6308_u.func_552_a(".give <id> [amount] - Give yourself an itemid");
@@ -86,7 +91,8 @@ public class GuiChat extends GuiScreen
                         mc_06.field_6322_g.fly = true;
                         mc_06.field_6308_u.func_552_a("Fly mode Enabled");
                     }
-                } else if (args[0].equals(".instamine")) {
+                }
+                else if (args[0].equals(".instamine")) {
                     if (mc_06.field_6322_g.instaBreak) {
                         mc_06.field_6322_g.instaBreak = false;
                         mc_06.field_6308_u.func_552_a("Instant Break Disabled");
@@ -114,6 +120,39 @@ public class GuiChat extends GuiScreen
                     }
 
                 }
+                else if(args[0].equals(".nether"))
+                {
+                    mc_06.func_6237_k();
+                }
+                else if(args[0].equals(".clear"))
+                {
+                    int total = mc_06.field_6322_g.inventory.getSizeInventory();
+                    for(int slotId =0; slotId < total; slotId++)
+                    {
+                        mc_06.field_6322_g.inventory.setInventorySlotContents(slotId,null);
+                    }
+
+                }
+                else if(args[0].equals(".invsee")) {
+                    if(args.length >= 2) {
+                        String playername = message_01.substring(8);
+
+                        int noPlayers = mc_06.field_6324_e.playerEntities.size();
+                        for (int playerNo = 0; playerNo < noPlayers; playerNo++) {
+                            EntityPlayer player = (EntityPlayer) mc_06.field_6324_e.playerEntities.get(playerNo);
+
+                            if (player.field_771_i.equals(playername)) {
+                                mc_06.func_6272_a(new GuiInventory(player.inventory,player.inventory.craftingInventory));
+                                return;
+                            }
+                        }
+                        mc_06.field_6308_u.func_552_a("Cannot find: "+playername);
+                    }
+                    else {
+                        mc_06.field_6308_u.func_552_a(".invsee <player>");
+                    }
+
+                }
                 else if(args[0].equals(".fp"))
                 {
 
@@ -124,7 +163,8 @@ public class GuiChat extends GuiScreen
 
                         if(args.length == 2)
                         {
-                            if(player.field_771_i.equals(args[1]))
+                            String playername = message_01.substring(4);
+                            if(player.field_771_i.equals(playername))
                             {
                                 mc_06.field_6308_u.func_552_a(player.field_771_i +" X: "+String.valueOf(Math.floor(player.posX))+ " Y: "+String.valueOf(Math.floor(player.posY))+" Z: "+String.valueOf(Math.floor(player.posZ)));
                             }
@@ -203,16 +243,24 @@ public class GuiChat extends GuiScreen
                 {
                     int id = 0;
                     int count = 0;
+                    int damage = 0;
                     if(args.length >= 2) {
+                        if(args.length == 4){
+                            id = Integer.parseInt(args[1]);
+                            count = Integer.parseInt(args[2]);
+                            damage = Integer.parseInt(args[3]);
+                        }
                         if (args.length == 3) {
                             id = Integer.parseInt(args[1]);
                             count = Integer.parseInt(args[2]);
+                            damage = 0;
                         } else if (args.length == 2) {
                             id = Integer.parseInt(args[1]);
                             count = 1;
+                            damage = 0;
                         }
                         ItemStack itm;
-                        itm = new ItemStack(id, count);
+                        itm = new ItemStack(id, count, damage);
 
                         try {
                             itm.getMaxStackSize();
@@ -225,7 +273,7 @@ public class GuiChat extends GuiScreen
                     }
                     else
                     {
-                        mc_06.field_6308_u.func_552_a(".give <id> [amount]");
+                        mc_06.field_6308_u.func_552_a(".give <id> [amount] [damage]");
                     }
                 }
                 else

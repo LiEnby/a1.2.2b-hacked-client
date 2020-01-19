@@ -463,8 +463,7 @@ public class Block
     }
 
     public void onEntityCollidedWithBlock(World world, int i, int j, int k, Entity entity)
-    {
-    }
+    { }
 
     public boolean isIndirectlyPoweringTo(World world, int i, int j, int k, int l)
     {
