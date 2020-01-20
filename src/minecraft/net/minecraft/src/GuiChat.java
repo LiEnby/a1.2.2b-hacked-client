@@ -4,6 +4,7 @@ package net.minecraft.src;
 // Decompiler options: packimports(3) braces deadcode 
 
 import net.minecraft.client.Minecraft;
+import org.lwjgl.Sys;
 import org.lwjgl.input.Keyboard;
 
 import java.util.ArrayList;
@@ -62,10 +63,13 @@ public class GuiChat extends GuiScreen
                     mc_06.field_6308_u.func_552_a(".nick <name> - Change your name");
                     mc_06.field_6308_u.func_552_a(".speed <mul> - Speed multiplier (default: 1.00)");
                     mc_06.field_6308_u.func_552_a(".fp [name] - Find player location");
+                    mc_06.field_6308_u.func_552_a(".fptp [name] - TP to player");
                     mc_06.field_6308_u.func_552_a(".invsee [name] - See players \"inventory\"");
                     mc_06.field_6308_u.func_552_a(".vel <x> <y> <z> - Give yourself Velocity");
-                    mc_06.field_6308_u.func_552_a(".tp <x> <z> - \"Respawn\" to location");
-                    mc_06.field_6308_u.func_552_a(".give <id> [amount] - Give yourself an itemid");
+                    mc_06.field_6308_u.func_552_a(".tp <x> <z> - Teleport to location (on MP chunk must be loaded)");
+                    mc_06.field_6308_u.func_552_a(".vtp <x> <z> - Teleport to location Using Velocity");
+                    mc_06.field_6308_u.func_552_a(".resp <x> <z> - \"Respawn\" to location");
+                    mc_06.field_6308_u.func_552_a(".give <id> [amount] [damage]- Give yourself an itemid");
                 } else if (args[0].equals(".showcoords")) {
                     if (showCoords) {
                         showCoords = false;
@@ -139,6 +143,60 @@ public class GuiChat extends GuiScreen
                     }
 
                 }
+                else if(args[0].equals(".tp"))
+                {
+                    if(args.length >= 3) {
+                        double posX;
+                        double posZ;
+                        if(!args[1].startsWith("~"))
+                        {
+                            posX= Double.parseDouble(args[1]);
+                        }
+                        else if(args[1].equals("~"))
+                        {
+                            posX = mc_06.field_6322_g.posX;
+                        }
+                        else
+                        {
+                            posX = mc_06.field_6322_g.posX + Double.parseDouble(args[1].substring(1));
+                        }
+
+                        if(!args[2].startsWith("~"))
+                        {
+                            posZ= Double.parseDouble(args[2]);
+                        }
+                        else if(args[2].equals("~"))
+                        {
+                            posZ = mc_06.field_6322_g.posZ;
+                        }
+                        else
+                        {
+                            posZ = mc_06.field_6322_g.posZ + Double.parseDouble(args[2].substring(1));
+                        }
+                        int blockX = (int)Math.round(posX);
+                        int blockZ = (int)Math.round(posZ);
+                        Chunk cnk = mc_06.field_6324_e.getChunkFromBlockCoords(blockX,blockZ);
+
+                        if(mc_06.field_6324_e.multiplayerWorld) {
+                            try {
+                                int blockId = cnk.getBlockID(0, 0, 0);
+                                if (blockId != Block.bedrock.blockID_00) {
+                                    throw new Exception();
+                                }
+                            } catch (Exception e) {
+                                mc_06.field_6308_u.func_552_a(args[1] + " , " + args[2] + " Is in unloaded chunks! cannot TP!");
+                                return;
+                            }
+                        }
+
+                        mc_06.field_6322_g.setPosition(mc_06.field_6322_g.posX, 128, mc_06.field_6322_g.posZ);
+                        mc_06.field_6322_g.setPosition(posX, mc_06.field_6322_g.posY, posZ);
+                    }
+                    else
+                    {
+                        mc_06.field_6308_u.func_552_a(".tp <x> <z>");
+                    }
+                }
                 else if(args[0].equals(".invsee")) {
                     if(args.length >= 2) {
                         String playername = message_01.substring(8);
@@ -181,6 +239,49 @@ public class GuiChat extends GuiScreen
                     }
 
                 }
+                else if(args[0].equals(".vtp"))
+                {
+                    if(args.length >= 3)
+                    {
+                        double curX = mc_06.field_6322_g.posX;
+                        double curZ = mc_06.field_6322_g.posZ;
+
+                        mc_06.field_6322_g.setPosition(curX, 130, curZ);
+
+                        double toX = Double.parseDouble(args[1]);
+                        double toZ = Double.parseDouble(args[2]);
+
+                        double diffX = toX - curX;
+                        double diffZ = toZ - curZ;
+
+                        mc_06.field_6322_g.motionX = diffX / 2.20264376874048D;
+                        mc_06.field_6322_g.motionZ = diffZ / 2.20264376874048D;
+                        mc_06.field_6322_g.fly = true;
+
+                    }
+                    else
+                    {
+                        mc_06.field_6308_u.func_552_a(".vtp <x> <z>");
+                    }
+                }
+                else if(args[0].equals(".fptp")) {
+
+                    int noPlayers = mc_06.field_6324_e.playerEntities.size();
+                    if (args.length >= 2) {
+                        String playername = message_01.substring(6);
+                        System.out.println(playername);
+                        for (int playerNo = 0; playerNo < noPlayers; playerNo++) {
+                            EntityPlayer player = (EntityPlayer) mc_06.field_6324_e.playerEntities.get(playerNo);
+                            if (player.field_771_i.equals(playername)) {
+                                mc_06.field_6322_g.setPosition(mc_06.field_6322_g.posX, 128, mc_06.field_6322_g.posZ);
+                                mc_06.field_6322_g.setPosition(player.posX, 128, player.posZ);
+                            }
+                        }
+
+                    }else {
+                        mc_06.field_6308_u.func_552_a(".fptp <player>");
+                    }
+                }
                 else if(args[0].equals(".vel"))
                 {
                     if(args.length == 4)
@@ -197,7 +298,7 @@ public class GuiChat extends GuiScreen
                         mc_06.field_6308_u.func_552_a(".vel <x> <y> <z>");
                     }
                 }
-                else if(args[0].equals(".tp"))
+                else if(args[0].equals(".resp"))
                 {
                     if(args.length >= 3) {
                         int posX = 0;
@@ -241,7 +342,7 @@ public class GuiChat extends GuiScreen
                         mc_06.field_6324_e.spawnX = _spawnX;
                     }
                     else {
-                        mc_06.field_6308_u.func_552_a(".tp <x> <z>");
+                        mc_06.field_6308_u.func_552_a(".resp <x> <z>");
                     }
 
                 }

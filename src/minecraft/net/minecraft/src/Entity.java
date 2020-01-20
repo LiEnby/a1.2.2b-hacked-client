@@ -563,8 +563,8 @@ public abstract class Entity
         f3 = f2 / f3;
         f *= f3;
         f1 *= f3;
-        float f4 = MathHelper.sin((rotationYaw * 3.141593F) / 180F);
-        float f5 = MathHelper.cos((rotationYaw * 3.141593F) / 180F);
+        float f4 = MathHelper.sin_00((rotationYaw * 3.141593F) / 180F);
+        float f5 = MathHelper.cos_00((rotationYaw * 3.141593F) / 180F);
         motionX += f * f5 - f1 * f4;
         motionZ += f1 * f5 + f * f4;
     }
