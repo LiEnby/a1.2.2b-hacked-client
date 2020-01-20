@@ -167,9 +167,9 @@ public class EntityPlayer extends EntityLiving
             f1 = 0.02F;
             float f3 = rand_05.nextFloat() * 3.141593F * 2.0F;
             f1 *= rand_05.nextFloat();
-            entityitem.motionX += Math.cos(f3) * (double)f1;
+            entityitem.motionX += MathHelper.cos(f3) * (double)f1; //Changed from Math.cos to MathHelper.cos (workaround MCP limitations)
             entityitem.motionY += (rand_05.nextFloat() - rand_05.nextFloat()) * 0.1F;
-            entityitem.motionZ += Math.sin(f3) * (double)f1;
+            entityitem.motionZ += MathHelper.sin(f3) * (double)f1; //Changed from Math.cos to MathHelper.cos (workaround MCP limitations)
         }
         func_446_a(entityitem);
     }

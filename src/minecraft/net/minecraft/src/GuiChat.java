@@ -56,6 +56,8 @@ public class GuiChat extends GuiScreen
                     mc_06.field_6308_u.func_552_a(".fly - Toggle Fly mode");
                     mc_06.field_6308_u.func_552_a(".instamine - Toggle Instant Block-Break");
                     mc_06.field_6308_u.func_552_a(".sun - Makes it daytime");
+                    mc_06.field_6308_u.func_552_a(".clear - Clear entire inventory");
+                    mc_06.field_6308_u.func_552_a(".creative - Open \"Creative\" inventory");
                     mc_06.field_6308_u.func_552_a(".nether - Enter/Leave the Nether");
                     mc_06.field_6308_u.func_552_a(".nick <name> - Change your name");
                     mc_06.field_6308_u.func_552_a(".speed <mul> - Speed multiplier (default: 1.00)");
@@ -110,7 +112,11 @@ public class GuiChat extends GuiScreen
                     }
                 } else if (args[0].equals(".sun")) {
                     mc_06.field_6324_e.setWorldTime(0);
-                } else if (args[0].equals(".nick"))
+                }else if(args[0].equals(".creative")) {
+
+                    mc_06.func_6272_a(new GuiChest(mc_06.field_6322_g.inventory,new CreativeInventory()));
+                }
+                else if (args[0].equals(".nick"))
                 {
                     if(args.length >= 2) {
                         mc_06.field_6322_g.field_771_i = args[1];
