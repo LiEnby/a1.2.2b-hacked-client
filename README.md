@@ -13,6 +13,7 @@ To build:
 8)
 in conf/client_obfuscation.txt add the following
 ```
+CreativeInventory
 Entity
 EntityLiving
 EntityPlayer
