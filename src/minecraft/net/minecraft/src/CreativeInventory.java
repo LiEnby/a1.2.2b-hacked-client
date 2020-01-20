@@ -62,9 +62,11 @@ public class CreativeInventory implements IInventory{
             itemOffset += this.getSizeInventory();
             return null;
         }
+
         ItemStack itm = items.get(itemOffset+i);
-        itm.stackSize = itm.getMaxStackSize();
-        return itm;
+        int itemID = itm.itemID;
+        int stackSize = itm.getMaxStackSize();
+        return new ItemStack(itemID,stackSize);
     }
 
 

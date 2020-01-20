@@ -170,6 +170,8 @@ public class GuiIngame extends Gui
         {
             if(GuiChat.showCoords) {
                 fontrenderer.drawStringWithShadow("X: "+String.valueOf(mc_05.field_6322_g.posX)+" Y: "+String.valueOf(mc_05.field_6322_g.posY)+" Z: "+String.valueOf(mc_05.field_6322_g.posZ), 2, 2, 0xffffff);
+                if(mc_05.field_6305_x != null)
+                    fontrenderer.drawStringWithShadow("Looking At: X: "+String.valueOf(mc_05.field_6305_x.blockX)+" Y: "+String.valueOf(mc_05.field_6305_x.blockY)+" Z: "+String.valueOf(mc_05.field_6305_x.blockZ), 2, 10, 0xffffff);
             }
             else
             {

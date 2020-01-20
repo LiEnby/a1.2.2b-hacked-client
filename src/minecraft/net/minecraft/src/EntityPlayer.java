@@ -123,8 +123,8 @@ public class EntityPlayer extends EntityLiving
         inventory.dropAllItems();
         if(entity != null)
         {
-            motionX = -MathHelper.cos(((field_6399_N + rotationYaw) * 3.141593F) / 180F) * 0.1F;
-            motionZ = -MathHelper.sin(((field_6399_N + rotationYaw) * 3.141593F) / 180F) * 0.1F;
+            motionX = -MathHelper.cos_00(((field_6399_N + rotationYaw) * 3.141593F) / 180F) * 0.1F;
+            motionZ = -MathHelper.sin_00(((field_6399_N + rotationYaw) * 3.141593F) / 180F) * 0.1F;
         } else
         {
             motionX = motionZ = 0.0D;
@@ -155,21 +155,21 @@ public class EntityPlayer extends EntityLiving
         {
             float f2 = rand_05.nextFloat() * 0.5F;
             float f4 = rand_05.nextFloat() * 3.141593F * 2.0F;
-            entityitem.motionX = -MathHelper.sin(f4) * f2;
-            entityitem.motionZ = MathHelper.cos(f4) * f2;
+            entityitem.motionX = -MathHelper.sin_00(f4) * f2;
+            entityitem.motionZ = MathHelper.cos_00(f4) * f2;
             entityitem.motionY = 0.20000000298023224D;
         } else
         {
             float f1 = 0.3F;
-            entityitem.motionX = -MathHelper.sin((rotationYaw / 180F) * 3.141593F) * MathHelper.cos((rotationPitch / 180F) * 3.141593F) * f1;
-            entityitem.motionZ = MathHelper.cos((rotationYaw / 180F) * 3.141593F) * MathHelper.cos((rotationPitch / 180F) * 3.141593F) * f1;
-            entityitem.motionY = -MathHelper.sin((rotationPitch / 180F) * 3.141593F) * f1 + 0.1F;
+            entityitem.motionX = -MathHelper.sin_00((rotationYaw / 180F) * 3.141593F) * MathHelper.cos_00((rotationPitch / 180F) * 3.141593F) * f1;
+            entityitem.motionZ = MathHelper.cos_00((rotationYaw / 180F) * 3.141593F) * MathHelper.cos_00((rotationPitch / 180F) * 3.141593F) * f1;
+            entityitem.motionY = -MathHelper.sin_00((rotationPitch / 180F) * 3.141593F) * f1 + 0.1F;
             f1 = 0.02F;
             float f3 = rand_05.nextFloat() * 3.141593F * 2.0F;
             f1 *= rand_05.nextFloat();
-            entityitem.motionX += MathHelper.cos(f3) * (double)f1; //Changed from Math.cos to MathHelper.cos (workaround MCP limitations)
+            entityitem.motionX += Math.cos(f3) * (double)f1;
             entityitem.motionY += (rand_05.nextFloat() - rand_05.nextFloat()) * 0.1F;
-            entityitem.motionZ += MathHelper.sin(f3) * (double)f1; //Changed from Math.cos to MathHelper.cos (workaround MCP limitations)
+            entityitem.motionZ += Math.sin(f3) * (double)f1;
         }
         func_446_a(entityitem);
     }

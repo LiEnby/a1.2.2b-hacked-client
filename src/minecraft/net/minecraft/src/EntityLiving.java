@@ -751,19 +751,19 @@ public class EntityLiving extends Entity
     {
         if(f == 1.0F)
         {
-            float f1 = MathHelper.cos(-rotationYaw * 0.01745329F - 3.141593F);
-            float f3 = MathHelper.sin(-rotationYaw * 0.01745329F - 3.141593F);
-            float f5 = -MathHelper.cos(-rotationPitch * 0.01745329F);
-            float f7 = MathHelper.sin(-rotationPitch * 0.01745329F);
+            float f1 = MathHelper.cos_00(-rotationYaw * 0.01745329F - 3.141593F);
+            float f3 = MathHelper.sin_00(-rotationYaw * 0.01745329F - 3.141593F);
+            float f5 = -MathHelper.cos_00(-rotationPitch * 0.01745329F);
+            float f7 = MathHelper.sin_00(-rotationPitch * 0.01745329F);
             return Vec3D.createVector(f3 * f5, f7, f1 * f5);
         } else
         {
             float f2 = field_602_at + (rotationPitch - field_602_at) * f;
             float f4 = field_603_as + (rotationYaw - field_603_as) * f;
-            float f6 = MathHelper.cos(-f4 * 0.01745329F - 3.141593F);
-            float f8 = MathHelper.sin(-f4 * 0.01745329F - 3.141593F);
-            float f9 = -MathHelper.cos(-f2 * 0.01745329F);
-            float f10 = MathHelper.sin(-f2 * 0.01745329F);
+            float f6 = MathHelper.cos_00(-f4 * 0.01745329F - 3.141593F);
+            float f8 = MathHelper.sin_00(-f4 * 0.01745329F - 3.141593F);
+            float f9 = -MathHelper.cos_00(-f2 * 0.01745329F);
+            float f10 = MathHelper.sin_00(-f2 * 0.01745329F);
             return Vec3D.createVector(f8 * f9, f10, f6 * f9);
         }
     }
