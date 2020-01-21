@@ -18,12 +18,19 @@ CreativeInventory
 Entity
 EntityLiving
 EntityPlayer
+EntityOtherPlayerMP
 EntityPlayerSP
 GuiChat
 GuiIngame
+GameSettings
+WorldClient
 Minecraft
 RenderGlobal
 Block
+Base64
+NetClientHandler
+SkinFixes
+ThreadDownloadImage
 ```
 10) Run reobfs.bat
 
