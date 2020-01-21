@@ -123,7 +123,21 @@ public class GuiChat extends GuiScreen
                 else if (args[0].equals(".nick"))
                 {
                     if(args.length >= 2) {
-                        mc_06.field_6322_g.field_771_i = args[1];
+                        String username = message_01.substring(6);
+                        mc_06.field_6320_i.field_1666_b = username;
+                        mc_06.field_6322_g.field_771_i = username;
+                        if(mc_06.field_6324_e.multiplayerWorld)
+                        {
+                            WorldClient wc =(WorldClient)mc_06.field_6324_e;
+
+                            String Hostname = wc.field_1052_A.Hostname;
+                            int Port = wc.field_1052_A.Port;
+
+                            mc_06.field_6324_e.func_660_k();
+
+                            mc_06.func_6261_a(null);
+                            mc_06.func_6272_a(new GuiConnecting(mc_06, Hostname, Port));
+                        }
                     }
                     else {
                         mc_06.field_6308_u.func_552_a(".nick <name>");
@@ -225,7 +239,7 @@ public class GuiChat extends GuiScreen
                     {
                         EntityPlayer player = (EntityPlayer)mc_06.field_6324_e.playerEntities.get(playerNo);
 
-                        if(args.length == 2)
+                        if(args.length >= 2)
                         {
                             String playername = message_01.substring(4);
                             if(player.field_771_i.equals(playername))
@@ -401,6 +415,7 @@ public class GuiChat extends GuiScreen
                     mc_06.field_6308_u.func_552_a("<"+mc_06.field_6322_g.field_771_i+"> "+ message_01.trim());
                 }
                 else {
+
                     mc_06.field_6322_g.func_461_a(message_01.trim());
                 }
             }

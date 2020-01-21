@@ -19,7 +19,7 @@ public class EntityPlayerSP extends EntityPlayer
         field_4129_m = i;
         if(session != null && session.field_1666_b != null && session.field_1666_b.length() > 0)
         {
-            field_622_aY = (new StringBuilder()).append("http://www.minecraft.net/skin/").append(session.field_1666_b).append(".png").toString();
+            field_622_aY = session.field_1666_b;
             System.out.println((new StringBuilder()).append("Loading texture ").append(field_622_aY).toString());
         }
         field_771_i = session.field_1666_b;

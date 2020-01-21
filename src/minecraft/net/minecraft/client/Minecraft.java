@@ -5,72 +5,8 @@
 package net.minecraft.client;
 
 
-import net.minecraft.src.AxisAlignedBB;
-import net.minecraft.src.Block;
-import net.minecraft.src.BlockGrass;
-import net.minecraft.src.EffectRenderer;
-import net.minecraft.src.EntityPlayer;
-import net.minecraft.src.EntityPlayerSP;
-import net.minecraft.src.EntityRenderer;
-import net.minecraft.src.EnumOS2;
-import net.minecraft.src.EnumOSMappingHelper;
-import net.minecraft.src.FontRenderer;
-import net.minecraft.src.GLAllocation;
-import net.minecraft.src.GameSettings;
-import net.minecraft.src.GameWindowListener;
-import net.minecraft.src.GuiChat;
-import net.minecraft.src.GuiConflictWarning;
-import net.minecraft.src.GuiConnecting;
-import net.minecraft.src.GuiGameOver;
-import net.minecraft.src.GuiIngame;
-import net.minecraft.src.GuiIngameMenu;
-import net.minecraft.src.GuiInventory;
-import net.minecraft.src.GuiMainMenu;
-import net.minecraft.src.GuiScreen;
-import net.minecraft.src.GuiUnused;
-import net.minecraft.src.InventoryPlayer;
-import net.minecraft.src.ItemRenderer;
-import net.minecraft.src.ItemStack;
-import net.minecraft.src.KeyBinding;
-import net.minecraft.src.LoadingScreenRenderer;
-import net.minecraft.src.MathHelper;
-import net.minecraft.src.MinecraftError;
-import net.minecraft.src.MinecraftException;
-import net.minecraft.src.MinecraftImpl;
-import net.minecraft.src.ModelBiped;
-import net.minecraft.src.MouseHelper;
-import net.minecraft.src.MovementInputFromOptions;
-import net.minecraft.src.MovingObjectPosition;
-import net.minecraft.src.OpenGlCapsChecker;
-import net.minecraft.src.PlayerController;
-import net.minecraft.src.PlayerControllerTest;
-import net.minecraft.src.RenderEngine;
-import net.minecraft.src.RenderGlobal;
-import net.minecraft.src.RenderManager;
-import net.minecraft.src.ScaledResolution;
-import net.minecraft.src.ScreenShotHelper;
-import net.minecraft.src.Session;
-import net.minecraft.src.SoundManager;
-import net.minecraft.src.Teleporter;
-import net.minecraft.src.Tessellator;
-import net.minecraft.src.TextureCompassFX;
-import net.minecraft.src.TextureFlamesFX;
-import net.minecraft.src.TextureLavaFX;
-import net.minecraft.src.TextureLavaFlowFX;
-import net.minecraft.src.TexturePackList;
-import net.minecraft.src.TexturePortalFX;
-import net.minecraft.src.TextureWatchFX;
-import net.minecraft.src.TextureWaterFX;
-import net.minecraft.src.TexureWaterFlowFX;
-import net.minecraft.src.ThreadDownloadResources;
-import net.minecraft.src.ThreadSleepForever;
-import net.minecraft.src.Timer;
-import net.minecraft.src.UnexpectedThrowable;
-import net.minecraft.src.Vec3D;
-import net.minecraft.src.World;
-import net.minecraft.src.WorldProvider;
-import net.minecraft.src.WorldProviderHell;
-import net.minecraft.src.WorldRenderer;
+import net.minecraft.src.*;
+
 import java.awt.*;
 import java.io.*;
 import org.lwjgl.LWJGLException;
@@ -1052,6 +988,20 @@ public abstract class Minecraft
                             {
                                 field_6322_g.func_444_a(field_6322_g.inventory.decrStackSize(field_6322_g.inventory.currentItem_00, 1), false);
                             }
+                            if(Keyboard.getEventKey() ==  field_6304_y.keyBindFly.keyCode)
+                            {
+                                if (field_6322_g.fly) {
+                                    field_6322_g.fly = false;
+                                    field_6308_u.func_552_a("Fly mode Disabled");
+                                } else {
+                                    field_6322_g.fly = true;
+                                    field_6308_u.func_552_a("Fly mode Enabled");
+                                }
+                            }
+                            if(Keyboard.getEventKey() ==  field_6304_y.keyBindCreativeInventory.keyCode)
+                            {
+                                func_6272_a(new GuiChest(field_6322_g.inventory,new CreativeInventory()));
+                            }
                             if(/*func_6260_j() &&*/ Keyboard.getEventKey() == field_6304_y.field_6521_r.keyCode)
                             {
                                 func_6272_a(new GuiChat());
@@ -1416,7 +1366,7 @@ public abstract class Minecraft
         {
             s1 = args[1];
         }
-        s = (new StringBuilder()).append("Player").append(System.currentTimeMillis() % 1000L).toString();
+       // s = (new StringBuilder()).append("Player").append(System.currentTimeMillis() % 1000L).toString();
         func_6269_a(s, s1);
     }
 
@@ -1460,8 +1410,8 @@ public abstract class Minecraft
     public static long field_6296_E[] = new long[512];
     public static long field_6295_F[] = new long[512];
     public static int field_6294_G = 0;
-    private String field_6279_V;
-    private int field_6278_W;
+    public String field_6279_V;
+    public int field_6278_W;
     private TextureWaterFX field_6277_X;
     private TextureLavaFX field_6276_Y;
     private static File field_6275_Z = null;
