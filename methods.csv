@@ -1,0 +1,893 @@
+"PLEASE do not sort this page, it will break the scripts (But manually add stuff where appropriate)",,,,Can be completed with v1.2.x data. Leave the class columns empty.
+Class (Reference only) added to help with organizing efforts. Be nice and add them as you go.
+,Game,,Server,Changed,,Client Duplicates
+class (for reference only),Reference,class (for reference only),Reference,Name,Notes,0
+a (PathPoint),func_1179_a,,func_730_a,isAssigned,Returns true if this point has already been assigned to a path,,[1]
+a (PathPoint),func_1180_a,,func_731_a,distanceTo,Returns the linear distance to another path point
+ad (IsomPreviewCanvas),func_1263_a,*,*,getDataFolder,Gets the minecraft directory.
+aj (Vec3D),func_1246_b,,*,crossProduct,Returns a new vector with the result of this vector x the specified vector.
+aj (Vec3D),func_1247_a,aw (Vec3D),func_766_a,getIntermediateWithXValue,"Returns a new vector with x value equal to the second parameter, along the line between this vector and the passed in vector, or null if not possible."
+aj (Vec3D),func_1248_b,aw (Vec3D),func_768_b,createVector,Static method to create a new vector in the vector list and return it.
+aj (Vec3D),func_1249_b,,*,rotateAroundY,Rotates the vector around the y axis by the specified angle.
+aj (Vec3D),func_1250_b,aw (Vec3D),func_763_b,getIntermediateWithYValue,"Returns a new vector with y value equal to the second parameter, along the line between this vector and the passed in vector, or null if not possible."
+aj (Vec3D),func_1251_c,aw (Vec3D),func_767_a,distanceTo,"Euclidean distance between this and the specified vector, returned as double."
+aj (Vec3D),func_1252_b,aw (Vec3D),func_758_b,normalize,Normalizes the vector to a length of 1 (except if it is the zero vector)
+aj (Vec3D),func_1253_c,aw (Vec3D),func_765_c,lengthVector,Returns the length of the vector.
+aj (Vec3D),func_1254_e,aw (Vec3D),func_756_e,setComponents,"Sets the x,y,z components of the vector as specified."
+aj (Vec3D),func_1255_d,aw (Vec3D),func_759_d,squareDistanceTo,"The square of the Euclidean distance between this and the vector of x,y,z components passed in."
+aj (Vec3D),func_1256_c,aw (Vec3D),func_762_c,getIntermediateWithZValue,"Returns a new vector with z value equal to the second parameter, along the line between this vector and the passed in vector, or null if not possible."
+aj (Vec3D),func_1257_c,aw (Vec3D),func_757_c,addVector,"Adds the specified x,y,z vector components to this vector and returns the resulting vector. Does not change this vector."
+aj (Vec3D),func_1258_a,,*,rotateAroundX,Rotates the vector around the x axis by the specified angle.
+aj (Vec3D),func_1259_a,aw (Vec3D),func_761_a,initialize,Initializes the next empty vector slot in the list to 0.
+aj (Vec3D),func_1260_a,aw (Vec3D),func_760_a,createVectorHelper,"Static method for creating a new Vec3D given the three x,y,z values. This is only called from the other static method which creates and places it in the list."
+aj (Vec3D),func_1261_d,aw (Vec3D),func_764_b,squareDistanceTo,The square of the Euclidean distance between this and the specified vector.
+aj (Vec3D),func_1262_e,,*,subtract,Returns a new vector with the result of the specified vector minus this.
+an (SlotCrafting),func_780_a,,*,isItemValid,Check if the stack is a valid item for this slot. Always true beside for the armor slots.
+ar (CraftingInventoryCB),func_1103_a,,*,onCraftMatrixChanged,Callback for when the crafting matrix is changed.
+ar (CraftingInventoryCB),func_1104_a,,*,onCraftGuiClosed,Callback for when the crafting gui is closed.
+av (ItemBlock),func_192_a,,func_78_a,onItemUse,"Callback for item usage. If the item does something special on right clicking, he will have one of those. Return True if something happen and false if it don't. This is for ITEMS, not BLOCKS !"
+aw (IChunkProvider),func_534_a,,func_362_a,populate,Populates chunk with ores etc etc
+az (SpawnerAnimals),func_1149_a,,func_441_a,createRandomSpawn,Spawn one random creature (possibly a Skeleton on a Spider) at a random location.
+az (SpawnerAnimals),func_1150_a,,func_442_a,spawnCreatures,Spawn three random creatures of types in the subclass array.
+az (SpawnerAnimals),func_1151_a,,func_440_a,getRandomPosition,Generate a random location in the specified chunk.
+b (BlockChest),func_286_h,,func_297_g,isThereANeighborChest,"Checks the neighbor blocks to see if there is a chest there. Args: world, x, y, z"
+bd (TileEntityMobSpawner),func_475_b,,func_184_b,updateEntity,"Allows the entity to update its state. Overridden in most subclasses, e.g. the mob spawner uses this to count ticks and creates a new spawn inside its implementation."
+bd (TileEntityMobSpawner),func_481_b,,func_188_b,writeToNBT,Writes a tile entity to NBT.
+bd (TileEntityMobSpawner),func_482_a,,func_186_a,readFromNBT,Reads a tile entity from NBT.
+bd (TileEntityMobSpawner),func_483_c,,func_196_d,updateDelay,Sets the delay before a new spawn (base delay of 200 + random number up to 600).
+be (OpenGlCapsChecker),func_1213_a,,*,checkARBOcclusion,Checks if we support OpenGL occlusion.
+bf (ThreadDownloadResources),func_1208_b,,*,closeMinecraft,Called when Minecraft is closing down.
+bf (ThreadDownloadResources),func_1209_a,,*,loadResource,Loads a resource and passes it to Minecraft to install.
+bf (ThreadDownloadResources),func_1210_a,,*,reloadResources,Reloads the resource folder and passes the resources to Minecraft to install.
+bf (ThreadDownloadResources),func_1211_a,,*,downloadAndInstallResource,Downloads the resource and saves it to disk then installs it.
+bf (ThreadDownloadResources),func_1212_a,,*,downloadResource,Downloads the resource and saves it to disk.
+bh (GuiScreen),func_563_a,,*,validate,Causes the screen to lay out its subcomponents again. This is the equivalent of the Java call Container.validate().
+bh (GuiScreen),func_564_d,,*,handleInput,Delegates mouse and keyboard input.
+bh (GuiScreen),func_565_a,,*,mouseClicked,Called when the mouse is clicked.
+bh (GuiScreen),func_566_e,,*,handleMouseInput,Handles mouse input.
+bh (GuiScreen),func_568_a,,*,deleteWorld,Deletes the selected world.
+bh (GuiScreen),func_569_f,,*,handleKeyboardInput,Handles keyboard input.
+bh (GuiScreen),func_570_g,,*,updateScreen,Called from the main game loop to update the screen.
+bh (GuiScreen),func_571_a,,*,drawScreen,Draws the screen and all the components in it.
+bh (GuiScreen),func_572_a,,*,actionPerformed,Fired when a control is clicked. This is the equivalent of ActionListener.actionPerformed(ActionEvent e).
+bh (GuiScreen),func_573_b,,*,mouseMoved,Called when the mouse is moved.
+bh (GuiScreen),func_574_c,,*,getClipboardString,Returns a string stored in the system clipboard.
+bh (GuiScreen),func_575_a,,*,initGui,"Initialises the GUI screen, adding and layout out the components."
+bh (GuiScreen),func_576_h,,*,dispose,Called when the screen is unloaded. Used to disable keyboard repeat events.
+bh (GuiScreen),func_580_a,,*,keyTyped,Fired when a key is typed. This is the equivalent of KeyListener.keyTyped(KeyEvent e).
+bl (PathEntity),func_1205_a,,func_727_a,getPosition,Gets the position that an entity should be at in the current point in the path
+bl (PathEntity),func_1206_a,,func_728_a,incrementPathIndex,Directs this path to the next point in its array
+bl (PathEntity),func_1207_b,,func_729_b,isFinished,Returns true if this path has reached the end
+bn (WorldRenderer),func_1194_f,,*,MarkDirty,Marks the current renderer data as dirty and needing to be updated
+bs (ItemTool),func_194_a,,*,isFull3D,Returns True is the item is renderer in full 3D when hold.
+bs (ItemTool),func_198_a,,*,getDamageVsEntity,Returns the damage against a given entity.
+bs (ItemTool),func_202_a,,*,hitEntity,Current implementations of this method in child classes do not use the entry argument beside ev. They just raise the damage on the stack.
+bs (ItemTool),func_203_a,,func_75_a,hitBlock,Current implementations of this method in child classes do not use the entry argument beside ev. They just raise the damage on the stack.
+bs (ItemTool),func_204_a,,func_79_a,getStrVsBlock,"Returns the strength of the stack against a given block. 1.0F base, (Quality+1)*2 if correct blocktype, 1.5F if sword"
+bv (CraftingRecipe),func_1182_a,,*,matchRecipe,Returns true if the passed in array of item ids matches the recipe
+bv (CraftingRecipe),func_1183_b,,*,createResult,Returns a new item stack that this recipe makes
+bv (CraftingRecipe),func_1184_a,,*,getRecipeSize,Returns the size of the recipe area
+bv (CraftingRecipe),func_1185_a,,*,matches,Returns true if a specific recipe location matches
+cf (AxisAlignedBB),func_1160_c,dg (AxisAlignedBB),func_711_b,copy,Returns a copy of the bounding box.
+cf (AxisAlignedBB),func_1161_b,dg (AxisAlignedBB),func_693_b,getBoundingBoxFromPool,"Returns a bounding box with the specified bounds from the pool.  Args: minX, minY, minZ, maxX, maxY, maxZ"
+cf (AxisAlignedBB),func_1164_b,,*,getAverageEdgeLength,Returns the average length of the edges of the bounding box.
+cf (AxisAlignedBB),func_1165_c,dg (AxisAlignedBB),func_695_c,setBounds,"Sets the bounds of the bounding box. Args: minX, minY, minZ, maxX, maxY, maxZ"
+cf (AxisAlignedBB),func_1168_a,dg (AxisAlignedBB),func_698_a,getBoundingBox,"Returns a bounding box with the specified bounds. Args: minX, minY, minZ, maxX, maxY, maxZ"
+cf (AxisAlignedBB),func_1170_a,dg (AxisAlignedBB),func_700_a,addCoord,"Adds the coordinates to the bounding box extending it if the point lies outside the current ranges. Args: x, y, z"
+cf (AxisAlignedBB),func_1174_d,dg (AxisAlignedBB),func_702_d,offset,"Offsets the current bounding box by the specified coordinates. Args: x, y, z"
+cf (AxisAlignedBB),func_1177_b,dg (AxisAlignedBB),func_708_b,expands,"Returns a bounding box expanded by the specified vector (if negative numbers are given it will shrink). Args: x, y, z"
+cf (AxisAlignedBB),func_1178_a,dg (AxisAlignedBB),func_704_a,intersectsWith,Returns whether the given bounding box intersects with this one. Args: axisAlignedBB
+cf (AxisAlignedBB),func_1166_c,dg (AxisAlignedBB),func_696_c,getOffsetBoundingBox,"Returns a bounding box offseted by the specified vector (if negative numbers are given it will shrink). Args: x, y, z"
+cf (AxisAlignedBB),func_1171_b,dg (AxisAlignedBB),func_699_b,setBB,Sets the bounding box to the same bounds as the bounding box passed in. Args: axisAlignedBB
+cf (AxisAlignedBB),func_1167_a,dg (AxisAlignedBB),func_697_a,isVecInYZ,Checks if the specified vector is within the YZ dimensions of the bounding box. Args: Vec3D
+cf (AxisAlignedBB),func_1175_b,dg (AxisAlignedBB),func_705_b,isVecInXZ,Checks if the specified vector is within the XZ dimensions of the bounding box. Args: Vec3D
+cf (AxisAlignedBB),func_1176_c,dg (AxisAlignedBB),func_707_c,isVecInXY,Checks if the specified vector is within the XY dimensions of the bounding box. Args: Vec3D
+cf (AxisAlignedBB),func_4150_a,,*,isVecInside,Checks if the specified vector is within bounds of the bounding box. Args: vec3D
+cf (AxisAlignedBB),func_4149_a,dg (AxisAlignedBB),func_703_a,clearBoundingBoxPool,Sets the number of bounding boxes in use from the pool to 0 so they will be reused
+cn (World),func_598_c,dy (World),func_455_j,getLightBrightness,"Returns how bright the block is shown as which is the block's light value looked up in a lookup table (light values aren't linear for brihgtness). Args: x, y, z"
+cn (World),func_601_g,dy (World),func_445_d,doesBlockAllowAttachment,"Returns if the block at the specified coordinates allow attachment Args: x, y, z"
+cn (World),func_609_a,dy (World),func_472_a,getClosestPlayerToEntity,"Gets the closest player to the entity within the specified distance (if distance is less than 0 then ignored). Args: entity, dist"
+cn (World),func_611_g,dy (World),func_449_g,notifyBlocksOfNeighborChange,"Notifies neighboring blocks that this specified block changed  Args: x, y, z, blockID"
+cn (World),func_615_b,,*,deleteWorld,Deletes the specified world.
+cn (World),func_617_e,dy (World),func_454_e,notifyBlockChange,"The block type change and need to notify other systems  Args: x, y, z, blockID"
+cn (World),func_618_j,dy (World),func_495_h,getBlockLightValue,Gets the light value of a block location
+cn (World),func_620_h,dy (World),func_447_g,chunkExists,"Returns whether a chunk exists at chunk coordinates x, y"
+cn (World),func_621_b,dy (World),func_487_a,countEntities,Counts how many entities of an entity class exist in the world. Args: entityClass
+cn (World),func_623_a,dy (World),func_506_a,playSoundAtEntity,"Plays a sound at the entity's position. Args: entity, sound, unknown1, unknown2"
+cn (World),func_624_b,dy (World),func_453_a,isDaytime,Checks whether its daytime by seeing if the light subtracted from the skylight is less than 4
+cn (World),func_625_o,dy (World),func_474_n,isBlockIndirectlyGettingPowered,"Used to see if one of the blocks next to you or your block is getting power from a neighboring block. Used by items like TNT or Doors so they don't have redstone going straight into them.  Args: x, y, z"
+cn (World),func_634_a,dy (World),func_462_a,setBlock,"Sets the block to the specified blockID at the block coordinates Args x, y, z, blockID"
+cn (World),func_635_c,dy (World),func_463_c,setBlockMetadata,Set the metadata of a block in global coordinates
+cn (World),func_640_a,dy (World),func_466_a,checkChunksExist,"Checks between a min and max all the chunks inbetween actually exist. Args: minX, minY, minZ, maxX, maxY, maxZ"
+cn (World),func_641_a,dy (World),func_512_a,getSavedLightValue,Returns saved light value without taking into account the time of day.  Either looks in the sky light map or block light map based on the enumSkyBlock arg.
+cn (World),func_644_f,dy (World),func_465_d,calculateInitialSkylight,Called on construction of the World class to setup the initial skylight values
+cn (World),func_646_n,dy (World),func_496_m,isBlockGettingPowered,"Whether one of the neighboring blocks is putting power into this block. Args: x, y, z"
+cn (World),func_647_i,dy (World),func_497_g,canBlockSeeTheSky,Checks if the specified block is able to see the sky
+cn (World),func_648_a,,*,setWorldTime,Sets the world time.
+cn (World),func_649_g,dy (World),func_4071_f,tick,Runs a single tick for the world
+cn (World),func_653_a,,*,deleteFiles,Recursively deletes files from a folder.
+cn (World),func_655_l,dy (World),func_527_k,notifyBlockOfNeighborChange,"Notifies a block that one of its neighbor change to the specified type Args: x, y, z, blockID"
+cn (World),func_657_a,dy (World),func_457_a,getEntitiesWithinAABB,"Returns all entities of the specified class type which intersect with the AABB. Args: entityClass, aabb"
+cn (World),func_659_b,dy (World),func_450_b,getEntitiesWithinAABBExcludingEntity,"Will get all entities within the specified AABB excluding the one passed into it. Args: entityToExclude, aabb"
+cn (World),func_662_b,dy (World),func_469_b,getIsAnyLiquid,Returns if any of the blocks within the aabb are liquids. Args: aabb
+cn (World),func_664_b,dy (World),func_529_b,setLightValue,"Sets the light value either into the sky map or block map depending on if enumSkyBlock is set to sky or block. Args: enumSkyBlock, x, y, z, lightValue"
+cn (World),func_666_c,dy (World),func_488_c,getHeightValue,"Returns the y coordinate with a block in it at this x, z coordinate"
+cn (World),func_668_j,dy (World),func_448_i,isBlockProvidingPowerTo,"Is this block powering in the specified direction Args: x, y, z, direction"
+cn (World),func_670_a,dy (World),func_491_a,playRecord,"Plays a record at the specified coordinates of the specified name. Args: recordName, x, y, z"
+cn (World),func_671_a,dy (World),func_493_a,calculateSkylightSubtracted,Returns the amount of skylight subtracted for the current time
+cn (World),func_673_a,dy (World),func_492_a,getChunkFromBlockCoords,"Returns a chunk looked up by block coordinates. Args: x, y"
+cn (World),func_674_a,dy (World),func_526_a,entityJoinedWorld,Called when an entity is spawned in the world. This includes players.
+cn (World),func_676_a,dy (World),func_468_a,createExplosion,"Creates an explosion at the position with the specified force. Args: entity, x, y, z, force"
+cn (World),func_677_m,,*,randomDisplayUpdates,"Randomly will call the random display update on a 1000 blocks within 16 units of the specified position. Args: x, y, z"
+cn (World),func_681_h,dy (World),func_499_h,scheduleBlockUpdate,"Schedules a specific block to be to ticked by its specified delay. Args: x, y, z, blockID"
+cn (World),func_683_a,dy (World),func_456_a,getClosestPlayer,"Gets the closest player to the point within the specified distance (distance can be set to less than 0 to not limit the distance). Args: x, y, z, dist"
+cn (World),func_684_a,dy (World),func_502_a,playSoundEffect,"Play a sound effect. Many many parameters for this function. Not sure what they do, but a classic call is : (double)i + 0.5D, (double)j + 0.5D, (double)k + 0.5D, ""random.door_open"", 1.0F, world.rand.nextFloat() * 0.1F + 0.9F with i,j,k position of the block."
+cn (World),func_690_d,dy (World),func_508_d,setBlockWithNotify,"Sets a block and notifies relevant systems with the block change  Args: x, y, z, blockID"
+cn (World),func_691_b,dy (World),func_511_b,setBlockMetadataWithNotify,"Sets the blocks metadata and if set will then notify blocks that this block changed. Args: x, y, z, metadata"
+cn (World),func_694_a,dy (World),func_514_a,spawnParticle,"Spawns a particle.  Args particleName, x, y, z, velX, velY, velZ"
+cn (World),func_697_a,dy (World),func_481_a,getCollidingBoundingBoxes,"Returns a list of bounding boxes that collide with aabb excluding the passed in entity's collision. Args: entity, aabb"
+cn (World),func_699_a,dy (World),func_517_a,getBlockLightValue,"Gets the light value of a block location. This is the actual function that gets the value and has a bool flag that indicates if its a half step block to get the maximum light value of a direct neighboring block (left, right, forward, back, and up)"
+cn (World),func_700_a,dy (World),func_518_a,TickUpdates,Runs through the list of updates to run and ticks them
+cn (World),func_704_b,dy (World),func_525_b,getChunkFromChunkCoords,"Returns back a chunk looked up by chunk coordinates Args: x, y"
+cn (World),func_706_k,dy (World),func_489_j,isBlockIndirectlyProvidingPowerTo,"Is a block next to you getting powered (if its an attachable block) or is it providing power directly to you.  Args: x, y, z, direction"
+cn (World),func_708_k,dy (World),func_517_a,canBlockSeeTheSky,Determines if a block can see the sky or not.  Validates it is a legitimate address for a chunk that exists then calls the corresponding function on the chunk
+cn (World),func_4078_a,dy (World),func_4069_a,neighborLightPropagationChanged,"Called when a neighboring block's light value has changed and its propagated light might change this blocks value.  Args: enumSkyBlock, x, y, z, propagatedLight"
+cv (BlockJukeBox),func_317_e,eh (BlockJukeBox),func_286_f,ejectRecord,Ejects the current record inside of the jukebox
+cx (GuiMainMenu),func_591_a,,*,drawLogo,Draws the imploding minecraft logo.
+cx (GuiMainMenu),func_592_j,,*,getRand,Returns the random number generator.
+cz (Pathfinder),func_1129_a,,func_656_a,addToPath,"Adds a path from start to end and returns the whole path (args: unused, start, end, unused, maxDistance)"
+cz (Pathfinder),func_1130_a,,func_652_a,createEntityPathTo,Internal implementation of creating a path from an entity to a point
+cz (Pathfinder),func_1131_a,,func_651_a,createEntityPathTo,Creates a path from an entity to a specified location within a minimum distance
+cz (Pathfinder),func_1132_a,,func_649_a,getVerticalOffset,"Given an x y z, returns a vertical offset needed to search to find a block to stand on"
+cz (Pathfinder),func_1133_b,,func_654_b,findPathOptions,"populates pathOptions with available points and returns the number of options found (args: unused1, currentPoint, unused2, targetPoint, maxDistance)"
+cz (Pathfinder),func_1134_a,,func_653_a,createEntityPath,Returns a new PathEntity for a given start and end point
+cz (Pathfinder),func_1135_a,,func_650_a,getSafePoint,Returns a point that the entity can safely move to
+cz (Pathfinder),func_1136_a,,func_655_a,openPoint,Returns a mapped point or creates and adds one
+cz (Pathfinder),func_1137_a,,func_657_a,createEntityPathTo,Creates a path from one entity to another within a minimum distance
+df (GLAllocation),func_1123_d,*,*,getDirectFloatBuffer,Returns a direct float buffer with the specified capacity. Applies native ordering to speed up access.
+df (GLAllocation),func_1124_a,*,*,generateDisplayLists,Generates the specified number of display lists and returns the first index.
+df (GLAllocation),func_1125_c,*,*,getDirectIntBuffer,Returns a direct int buffer with the specified capacity. Applies native ordering to speed up access.
+df (GLAllocation),func_1126_a,*,*,deleteTexturesAndDisplayLists,Deletes all textures and display lists. Called when Minecraft is shutdown to free up resources.
+df (GLAllocation),func_1127_b,*,*,getDirectByteBuffer,Returns a direct byte buffer with the specified capacity. Applies native ordering to speed up access.
+df (GLAllocation),func_1128_a,*,*,generateTextureNames,Generates texture names and stores them in the specified buffer.
+dh (BlockSand),func_315_h,,func_284_h,tryToFall,If there is space to fall below will start this block falling
+dh (BlockSand),func_316_a_,,func_285_g,canFallBelow,Checks to see if the sand can fall into the block below it
+di (Item),func_193_a,,func_6152_a,onItemRightClick,"Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer"
+di (Item),func_195_a,,func_80_a,canHarvestBlock,Returns if the item (tool) can harvest results from the block type.
+di (Item),func_196_a,,*,getIconIndex,Returns the icon index of the stack given as argument.
+di (Item),func_197_c,,func_77_b,getMaxDamage,Returns the maximum damage an item can take.
+di (Item),func_199_d,,func_76_c,setFull3D,Sets bFull3D to True and return the object.
+di (Item),func_200_b,,func_81_a,getItemStackLimit,Returns the maximum size of the stack for a specific item. *Isn't this more a Set than a Get?*
+di (Item),func_201_b,,*,useItemOnEntity,Uses the given item on the entity.
+di (Item),func_4022_a,,func_74_a,setIconIndex,Sets the icon index for this item. Returns the item.
+dk (Slot),func_776_b,,*,putStack,Helper fnct to put a stack in the slot.
+dk (Slot),func_777_b,,*,getStack,Helper fnct to get the stack in the slot.
+dm (EntityPlayer),func_450_a,,func_165_a,getCurrentPlayerStrVsBlock,Returns how strong the player is against the specified block at this moment
+dw (CraftingManager),func_1119_a,,*,craft,Given an array of item ids it produces the crafting result of a matching recipe if found
+dw (CraftingManager),func_1120_a,,*,getInstance,Returns the static instance of this class
+dw (CraftingManager),func_1121_a,*,*,addRecipe,Adds a recipe. See spreadsheet on first page for details.
+dy (NBTTagByteArray),func_733_a,,func_379_a,getType,Gets the type byte for the tag.
+dy (NBTTagByteArray),func_735_a,,func_381_a,writeTag,Writes the tag to the given DataOutput.
+dy (NBTTagByteArray),func_736_a,,func_382_a,readTag,Reads the tag from the given DataInput.
+eb (SoundPool),func_1117_a,,*,addSound,Adds a sound to this sound pool.
+ee (GuiContainer),func_588_a,,*,getSlotAtPosition,Returns the slot at the given coordinates or null if there is none.
+el (NBTBase),func_731_b,,func_377_b,getTagName,"Returns the string name of a tag with the specified type, or ""UNKNOWN"" if invalid."
+el (NBTBase),func_732_a,,func_385_m,setKey,Sets the key for this tag and returns this for convenience.
+el (NBTBase),func_734_b,,func_383_b,readTag,"Reads and returns a tag from the given DataInput, or the End tag if no tag could be read."
+el (NBTBase),func_737_b,,func_384_c,getKey,"Gets the key corresponding to the tag, or an empty string if none set."
+el (NBTBase),func_738_a,,func_380_a,writeTag,"Writes the specified tag to the given DataOutput, writing the type byte, the UTF string key and then calling the tag to write its data."
+el (NBTBase),func_739_a,,func_378_a,createTagOfType,"Creates and returns a new tag of the specified type, or null if invalid."
+eo (MathHelper),func_1106_a,,func_585_a,sin_00,sin looked up in a table
+eo (MathHelper),func_1114_b,,func_582_b,cos_00,cos looked up in the sin table with the appropriate offset
+eo (MathHelper),func_1107_a,,func_581_a,abs_max,Maximum of the absolute value of two numbers.
+eo (MathHelper),func_1109_a,,func_583_a,sqrt_double
+eo (MathHelper),func_1110_d,,func_588_d,convertToBlockCoord,Takes a float and converts it into a block coordinate taking into account integer conversion rounds to zero below zero.
+eo (MathHelper),func_1108_b,,func_584_b,convertToBlockCoord,Takes a double and converts it into a block coordinate taking into account integer conversion rounds to zero below zero.
+eo (MathHelper),func_1111_a,,*,bucketInt,"Buckets an integer with specifed bucket sizes.  Args: i, bucketSize"
+eo (MathHelper),func_1112_e,,func_587_e,abs
+eo (MathHelper),func_1113_c,,func_586_c,sqrt_float
+eu (InventoryPlayer),func_468_c,,func_82_a,getStackInSlot,Returns the stack in slot i
+eu (InventoryPlayer),func_469_c,,*,getSizeInventory,Returns the number of slots in the inventory.
+eu (InventoryPlayer),func_470_e,,func_202_d,getInventoryStackLimit,"Returns the maximum stack size for a inventory slot. Seems to always be 64, possibly will be extended. *Isn't this more of a set than a get?*"
+eu (InventoryPlayer),func_471_d,,*,getInvName,Returns the name of the inventory.
+eu (InventoryPlayer),func_472_a,,func_206_a,setInventorySlotContents,Sets the given item stack to the specified slot in the inventory (can be crafting or armor sections).
+eu (InventoryPlayer),func_473_a,,*,decrStackSize,Decrease the size of the stack in slot (first int arg) by the amount of the second int arg. Returns the new stack.
+eu (InventoryPlayer),func_493_a,,func_200_a,writeToNBT,"Writes the inventory out as a list of compound tags. This is where the slot indices are used (+100 for armor, +80 for crafting)."
+eu (InventoryPlayer),func_494_a,,func_213_b,getCurrentItem,Returns the item stack currently held by the player.
+eu (InventoryPlayer),func_495_b,,func_209_a,addItemsToInventory,Adds the j items of type i to inventory and returns the number of items that couldn't fit (0 if they all fit).
+eu (InventoryPlayer),func_497_g,,func_204_c,getFirstPartialMatchingStack,Returns the first item stack in inventory that matches the given item stack and isn't full.
+eu (InventoryPlayer),func_499_j,,func_205_g,getFirstEmptyStack,Returns the first item stack that is empty.
+eu (InventoryPlayer),func_503_g,,func_199_f,dropAllItems,Drop all armor and main inventory items.
+eu (InventoryPlayer),func_504_a,,func_201_a,addItemStackToInventory,"Adds the item stack to the inventory, returns false if it is impossible."
+eu (InventoryPlayer),func_506_f,,func_212_e,getTotalArmorValue,"Based on the damage values and maximum damage values of each armor item, returns the current armor value."
+eu (InventoryPlayer),func_507_e,,func_211_b,damageArmor,Damages armor in each slot by the specified amount.
+eu (InventoryPlayer),func_508_a,,func_208_a,getStrVsBlock,"Gets the strength of the current item (tool) against the specified block, 1.0f if not holding anything."
+eu (InventoryPlayer),func_509_b,,func_207_b,canHarvestBlock,Returns whether the current item (tool) can harvest from the specified block (actually get a result).
+eu (InventoryPlayer),func_511_b,,func_210_c,decrementAnimations,Decrement the number of animations remaining. Only called on client side. This is used to handle the animation of receiving a block.
+eu (InventoryPlayer),func_513_b,,func_203_b,readFromNBT,Reads from the given tag list and fills the slots in the inventory with the correct items.
+ev (ItemStack),func_1085_a,,*,splitStack,Remove the argument from the stack size. Return a new stack object with argument size.
+ev (ItemStack),func_1086_a,,func_570_a,writeToNBT,Write the stack fields to a NBT object. Return the new NBT object.
+ev (ItemStack),func_1087_a,,func_568_a,hitBlock,Calls the corresponding fct in di
+ev (ItemStack),func_1088_b,,*,getIconIndex,Returns the icon index of the current stack.
+ev (ItemStack),func_1089_c,,func_576_b,getMaxStackSize,Returns maximum size of the stack.
+ev (ItemStack),func_1090_a,,func_572_a,useItem,"Uses the item stack by the player. Gives the coordinates of the block its being used against and the side. Args: player, world, x, y, z, side"
+ev (ItemStack),func_1091_a,,func_569_a,getItem,Returns the object corresponding to the stack.
+ev (ItemStack),func_1092_a,,*,hitEntity,Calls the corresponding fct in di
+ev (ItemStack),func_1093_a,,func_6168_a,useItemRightClick,"Called whenever this item stack is equipped and right clicked. Returns the new item stack to put in the position where this item is. Args: world, player"
+ev (ItemStack),func_1094_d,,func_571_c,getMaxDamage,Returns the max damage an item in the stack can take.
+ev (ItemStack),func_1095_a,,*,getDamageVsEntity,Returns the damage against a given entity.
+ev (ItemStack),func_1096_b,,func_575_b,readFromNBT,Read the stack fields from a NBT object.
+ev (ItemStack),func_1098_a,,func_574_a,getStrVsBlock,Returns the strength of the stack against a given block.
+ev (ItemStack),func_1100_b,,*,useItemOnEntity,Uses the stack on the entity.
+ev (ItemStack),func_1101_b,,func_579_a,damageItem,"Raise the damage on the item by the argument. If the dmg is superior to health, destroy one element of the stack."
+ev (ItemStack),func_1102_e,,func_578_d,copy,Returns a new stack with the same properties.
+ey (RenderEngine),func_1070_a,,*,getTexture
+ey (RenderEngine),func_1076_b,,*,bindTexture
+fi (MCHashTable),func_1052_b,,func_553_d,removeObject,Removes the specified object from the map and returns it
+fi (MCHashTable),func_1053_a,,func_547_a,insert,Adds an object to a slot
+fi (MCHashTable),func_1054_c,,func_557_e,removeEntry,Removes the specified entry from the map and returns it
+fi (MCHashTable),func_1055_e,,func_545_g,computeHash,Makes the passed in integer suitable for hashing by a number of shifts
+fi (MCHashTable),func_1056_d,,func_546_f,getHash,Returns the hash code for a key
+fi (MCHashTable),func_1057_a,,func_550_a,lookup,Returns the object associated to a key
+fi (MCHashTable),func_1058_a,,func_551_a,clearMap,Removes all entries from the map
+fi (MCHashTable),func_1059_a,,func_549_a,copyTo,Copies the hash slots to a new array
+fi (MCHashTable),func_1060_f,,func_552_h,grow,Increases the number of hash slots
+fi (MCHashTable),func_1061_a,,func_554_a,addKey,Adds a key and associated value to this map
+fi (MCHashTable),func_1062_a,,func_555_a,getSlotIndex,Computes the index of the slot for the hash and slot count passed in.  
+fk (GuiButton),func_558_a,,*,getHoverState,"Returns 0 if the button is disabled, 1 if the mouse is NOT hovering over this button and 2 if it IS hovering over this button."
+fk (GuiButton),func_559_a,,*,mouseReleased,Fired when the mouse button is released. Equivalent of MouseListener.mouseReleased(MouseEvent e).
+fk (GuiButton),func_560_b,,*,mouseDragged,Fired when the mouse button is dragged. Equivalent of MouseListener.mouseDragged(MouseEvent e).
+fk (GuiButton),func_561_a,,*,drawButton,Draws this button to the screen.
+fk (GuiButton),func_562_c,,*,mousePressed,Returns true if the mouse has been pressed on this control. Equivalent of MouseListener.mousePressed(MouseEvent e).
+fn (Packet),func_321_a,hp (Packet),func_64_a,addIdClassMapping,Adds a two way mapping between the packet ID and packet class.
+fn (Packet),func_322_a,hp (Packet),func_68_a,writePacketData,Abstract. Writes the raw packet data to the data stream.
+fn (Packet),func_323_a,hp (Packet),func_72_a,processPacket,Passes this Packet on to the NetHandler for processing.
+fn (Packet),func_324_b,hp (Packet),func_65_b,readPacket,"Read a packet, prefixed by its ID, from the data stream."
+fn (Packet),func_325_a,hp (Packet),func_67_a,getNewPacket,Returns a new instance of the specified Packet class.
+fn (Packet),func_326_b,hp (Packet),func_69_b,getPacketId,Returns the ID of this packet.
+fn (Packet),func_327_a,hp (Packet),func_70_a,readPacketData,Abstract. Reads the raw packet data from the data stream.
+fn (Packet),func_328_a,hp (Packet),func_66_a,writePacket,"Writes a packet, prefixed by its ID, to the data stream."
+fn (Packet),func_329_a,hp (Packet),func_71_a,getPacketSize,Abstract. Return the size of the packet (not counting the header).
+fr (GameSettings),func_1041_b,,*,saveOptions,Saves the options to the options file.
+fr (GameSettings),func_1042_a,,*,setKeyBinding,Sets a key binding.
+fr (GameSettings),func_1043_a,,*,getKeyBinding,Gets a key binding.
+fr (GameSettings),func_1044_a,,*,loadOptions,Loads the options from the options file.
+fr (GameSettings),func_1045_b,,*,setOptionValue,"For non-float options. Toggles the option on/off, or cycles through the list i.e. render distances."
+fr (GameSettings),func_1046_b,,*,getOptionControlType,Returns 1 if the option is controlled by a button and 0 if controlled by a slider.
+fr (GameSettings),func_1047_d,,*,getOptionDisplayString,The string that appears inside the button/slider in the options menu.
+fr (GameSettings),func_1048_a,,*,setOptionFloatValue,"If the specified option is controlled by a slider (float value), this will set the float value."
+fr (GameSettings),func_1049_c,,*,getOptionFloatValue,"If the specified option is controlled by a slider (float value), this will return the float value. Otherwise it returns 0.0f."
+fr (GameSettings),func_1050_a,,*,parseFloat_00,Parses a string into a float.
+,func_6519_a,,*,loadOptions,"Loads the options from the options file. It appears that this has replaced the previous ""loadOptions""."
+fx (Path),func_1033_a,,func_412_a,sortBack,Sorts a point to the left
+fx (Path),func_1034_a,,func_413_a,addPoint,Adds a point to the path
+fx (Path),func_1035_a,,func_414_a,changeDistance,Changes the provided point's distance to target
+fx (Path),func_1036_b,,func_415_b,dequeue,Returns and removes the first point in the path
+fx (Path),func_1037_b,,func_416_b,sortForward,Sorts a point to the right
+fx (Path),func_1038_a,,func_417_a,clearPath,Clears the path
+fx (Path),func_1039_c,,func_418_c,isPathEmpty,Returns true if this path contains no points
+ga (Chunk),func_994_a,,func_329_a,getEntitiesWithinAABBForEntity,"Fills the given list of all entities that intersect within the given bounding box that aren't the passed entity  Args: entity, aabb, listToFill"
+ga (Chunk),func_999_b,,func_337_b,getHeightValue,"Returns the value in the height map at this x, z coordinate in the chunk"
+ga (Chunk),func_1000_a,,func_335_a,addEntity,Adds an entity to the chunk. Args: entity
+ga (Chunk),func_1007_c,,func_343_c,canBlockSeeTheSky,Returns whether is not a block above this one blocking sight to the sky (done via checking against the heightmap)
+ga (Chunk),func_1008_a,,func_344_a,getBlockID,Return the ID of a block in the chunk.
+ga (Chunk),func_1009_b,,func_345_b,setBlockMetadata,Set the metadata of a block in the chunk
+ga (Chunk),func_1010_a,,func_346_a,setBlockIDWithMetadata,"Sets a blockID of a position within a chunk with metadata. Args: x, y, z, blockID, metadata"
+ga (Chunk),func_1011_a,,func_330_a,setLightValue,"Sets the light value at the coordinate.  If enumskyblock is set to sky it sets it in the skylightmap and if its a block then into the blocklightmap.  Args enumSkyBlock, x, y, z, lightValue"
+ga (Chunk),func_1013_a,,func_342_a,getEntitiesOfTypeWithinAAAB,"Gets all entities that can be assigned to the specified class. Args: entityClass, aabb, listToFill"
+ga (Chunk),func_1018_b,,*,generateHeightMap,Generates the height map for a chunk from scratch
+ga (Chunk),func_1019_c,,func_354_c,getBlockLightValue,Gets the amount of light on a block taking into account sunlight
+ga (Chunk),func_1021_b,,func_356_b,getBlockMetadata,Return the metadata corresponding to the given coordinates inside a chunk.
+ga (Chunk),func_1022_a,,func_357_a,setBlockID,"Sets a blockID for a position in the chunk. Args: x, y, z, blockID"
+ga (Chunk),func_1025_a,,func_341_a,getSavedLightValue,Gets the amount of light saved in this block (doesn't adjust for daylight)
+gb (Material),func_876_e,,func_214_e,getBurning,Returns if the block can burn or not.
+gb (Material),func_877_f,,func_215_f,setBurning,Set the canBurn bool to True and return the current object.
+gb (Material),func_879_d,,func_217_d,getIsLiquid,Returns if blocks of these materials are liquids.
+gb (Material),func_881_b,,func_219_b,getCanBlockGrass,Will prevent grass from growing on dirt underneath and kill any grass below it if it returns true
+ge (EntityLiving),func_413_f,is (EntityLiving),func_135_f,getSoundVolume,Returns the volume for the sounds this mob makes.
+ge (EntityLiving),func_414_d,is (EntityLiving),func_136_d,getHurtSound,Returns the sound this mob makes when it is hurt.
+ge (EntityLiving),func_419_b,is (EntityLiving),func_142_f,onDeath,Called when the mob's health reaches 0.
+ge (EntityLiving),func_422_g,is (EntityLiving),func_149_g,getDropItemId,Returns the item ID for the item the mob drops on death.
+ge (EntityLiving),func_423_c,is (EntityLiving),func_150_c,getLivingSound,Returns the sound this mob makes while it's alive.
+ge (EntityLiving),func_425_j,is (EntityLiving),func_153_y,onLivingUpdate,"Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons use this to react to sunlight and start to burn."
+ge (EntityLiving),func_428_e,is (EntityLiving),func_151_e,getDeathSound,Returns the sound this mob makes on death.
+ge (EntityLiving),func_432_b,is (EntityLiving),func_137_a,heal,Heal living entity (param: amount of half-hearts)
+ge (EntityLiving),func_433_a,is (EntityLiving),func_155_a,getCanSpawnHere,Checks if the entity's current position is a valid location to spawn this entity.
+gy (NetClientHandler),func_849_b,,*,disconnect,Disconnects the network connection.
+hd (BlockCrops),func_270_i,m (BlockCrops),func_278_h,getGrowthRate,"Gets the growth rate for the crop. Setup to encourage rows by halving growth rate if there is diagonals, crops on different sides that aren't opposing, and by adding growth for every crop next to this one (and for crop below this one). Args: x, y, z"
+hm (NBTTagCompound),func_743_k,,func_397_j,getCompoundTag,"Retrieves a NBTTagCompound subtag matching the specified key, or a new empty NBTTagCompound if no such key was stored."
+hm (NBTTagCompound),func_744_a,,func_390_a,setFloat,Stores a new NBTTagFloat with the given float value into the map with the given string key.
+hm (NBTTagCompound),func_745_d,,func_406_c,getShort,"Retrieves a short value using the specified key, or 0 if no such key was stored."
+hm (NBTTagCompound),func_746_c,,func_408_b,getByte,"Retrieves a byte value using the specified key, or 0 if no such key was stored."
+hm (NBTTagCompound),func_747_a,,func_391_a,setByteArray,Stores a new NBTTagByteArray with the given array as data into the map with the given string key.
+hm (NBTTagCompound),func_748_a,,func_393_a,setBoolean,"Stores the given boolean value as a NBTTagByte, storing 1 for true and 0 for false, using the given string key."
+hm (NBTTagCompound),func_749_a,,func_394_a,setShort,Stores a new NBTTagShort with the given short value into the map with the given string key.
+hm (NBTTagCompound),func_750_a,,func_396_a,setLong,Stores a new NBTTagLong with the given long value into the map with the given string key.
+hm (NBTTagCompound),func_751_b,,func_410_a,hasKey,Returns whether the given string has been previously stored as a key in the map.
+hm (NBTTagCompound),func_752_g,,func_389_f,getFloat,"Retrieves a float value using the specified key, or 0 if no such key was stored."
+hm (NBTTagCompound),func_753_l,,func_407_k,getTagList,"Retrieves a NBTTagList subtag matching the specified key, or a new empty NBTTagList if no such key was stored."
+hm (NBTTagCompound),func_754_a,,func_403_a,setString,Stores a new NBTTagString with the given string value into the map with the given string key.
+hm (NBTTagCompound),func_755_i,,func_401_h,getString,"Retrieves a string value using the specified key, or an empty string if no such key was stored."
+hm (NBTTagCompound),func_756_e,,func_395_d,getInteger,"Retrieves an integer value using the specified key, or 0 if no such key was stored."
+hm (NBTTagCompound),func_757_h,,func_398_g,getDouble,"Retrieves a double value using the specified key, or 0 if no such key was stored."
+hm (NBTTagCompound),func_758_a,,func_405_a,setInteger,Stores a new NBTTagInt with the given integer value into the map with the given string key.
+hm (NBTTagCompound),func_759_j,,func_400_i,getByteArray,"Retrieves a byte array using the specified key, or a zero-length array if no such key was stored."
+hm (NBTTagCompound),func_760_m,,func_402_l,getBoolean,"Retrieves a boolean value using the specified key, or false if no such key was stored. This uses the getByte method."
+hm (NBTTagCompound),func_761_a,,func_409_a,setByte,Stores a new NBTTagByte with the given byte value into the map with the given string key.
+hm (NBTTagCompound),func_762_a,,func_399_a,setTag,Stores the given tag into the map with the given string key. This is mostly used to store tag lists.
+hm (NBTTagCompound),func_763_a,,func_392_a,setCompoundTag,Stores the given NBTTagCompound into the map with the given string key.
+hm (NBTTagCompound),func_764_f,,func_404_e,getLong,"Retrieves a long value using the specified key, or 0 if no such key was stored."
+hm (NBTTagCompound),func_765_a,,func_411_a,setDouble,Stores a new NBTTagDouble with the given double value into the map with the given string key.
+ib (GuiDeleteWorld),func_584_c,,*,selectWorld,Gets the selected world.
+ib (GuiDeleteWorld),func_585_j,,*,initGui2,"Adds the ""delete world"" and ""cancel"" buttons to the screen."
+ic (TileEntity),func_476_a,,func_187_a,addMapping,Adds a new two-way mapping between the class and its string name in both hashmaps.
+ic (TileEntity),func_477_c,,func_185_c,createAndLoadEntity,Creates a new entity and loads its data from the specified NBT.
+ic (TileEntity),func_478_g,,*,getBlockType,Gets the block type at the location of this entity (client-only).
+ic (TileEntity),func_479_f,,*,getBlockMetadata,Returns block data at the location of this entity (client-only).
+ic (TileEntity),func_480_a,,*,getDistanceFrom,Returns the square of the distance between this entity and the passed in coordinates.
+ii (NetworkManager),*,bb (NetworkManager),func_744_d,getNumChunkDataPackets,Returns the number of chunk data packets waiting to be sent.,,DUPLICATE
+ii (NetworkManager),*,bb (NetworkManager),func_752_c,serverShutdown,Server-only method to shut down the network.,,DUPLICATE
+ii (NetworkManager),*,bb (NetworkManager),func_754_a,setNetHandler,Sets the NetHandler for this NetworkManager. Server-only.,,DUPLICATE
+ii (NetworkManager),*,bb (NetworkManager),func_755_b,getRemoteAddress,Returns the socket address of the remote side. Server-only.,,DUPLICATE
+ii (NetworkManager),func_963_f,bb (NetworkManager),func_748_f,getWriteThread,Returns the write thread.
+ii (NetworkManager),func_964_b,bb (NetworkManager),func_746_e,sendPacket,"Sends a data packet if there is one to send, or sends a chunk data packet if there is one and the counter is up, or does nothing. If it sends a packet, it sleeps for 10ms."
+ii (NetworkManager),func_965_d,bb (NetworkManager),func_749_d,sendNetworkPacket,Static accessor to sendPacket.
+ii (NetworkManager),func_966_c,bb (NetworkManager),func_751_c,readNetworkPacket,Static accessor to readPacket.
+ii (NetworkManager),func_967_a,bb (NetworkManager),func_747_a,processReadPackets,Checks timeouts and processes all pending read packets.
+ii (NetworkManager),func_968_b,bb (NetworkManager),func_740_b,isServerTerminating,Is the server terminating? Client side aways returns false.
+ii (NetworkManager),func_969_e,bb (NetworkManager),func_742_e,getReadThread,Returns the read thread.
+ii (NetworkManager),func_970_a,bb (NetworkManager),func_750_a,onNetworkError,Used to report network errors and causes a network shutdown.
+ii (NetworkManager),func_971_a,bb (NetworkManager),func_743_a,isRunning,Whether the network is operational.
+ii (NetworkManager),func_972_a,bb (NetworkManager),func_745_a,addToSendQueue,Adds the packet to the correct send queue (chunk data packets go to a separate queue).
+ii (NetworkManager),func_973_c,bb (NetworkManager),func_741_f,readPacket,"Reads a single packet from the input stream and adds it to the read queue. If no packet is read, it shuts down the network."
+ii (NetworkManager),func_974_a,bb (NetworkManager),func_753_a,networkShutdown,"Shuts down the network with the specified reason. Closes all streams and sockets, spawns NetworkMasterThread to stop reading and writing threads."
+ik,func_516_a,bc,func_419_a,generate
+im (IWorldAccess),func_933_a,be (IWorldAccess),func_682_a,playRecord,"Plays the specified record. Arg: recordName, x, y, z"
+im (IWorldAccess),func_939_a,be (IWorldAccess),func_687_a,spawnParticle,"Spawns a particle. Arg: particleType, x, y, z, velX, velY, velZ"
+im (IWorldAccess),func_940_a,be (IWorldAccess),func_689_a,playSound,"Plays the specified sound. Arg: x, y, z, soundName, unknown1, unknown2"
+,func_977_b,,*,startDrawingQuads,Sets draw mode in the tessellator to draw quads.
+,func_978_a,,*,setColorRGBA,Sets the RGBA values for the color. Also clamps them to 0-255.
+,func_979_a,,*,setColorOpaque,"Sets the RGB values as specified, and sets alpha to opaque."
+,func_980_b,,*,setNormal,Sets the normal for the current draw call.
+,func_981_a,,*,setTextureUV,Sets the texture coordinates.
+,func_982_a,,*,draw,Draws the data set up in this tessellator and resets the state to prepare for new drawing.
+,func_983_a,,*,addVertexWithUV,"Adds a vertex specifying both x,y,z and the texture u,v for it."
+,func_984_b,,*,setTranslationD,Sets the translation for all vertices in the current draw call. (D suffix indicates double parameters)
+,func_985_d,,*,reset,Clears the tessellator state in preparation for new drawing.
+,func_986_a,,*,setColorRGBA_F,"Sets the RGBA values for the color, converting from floats between 0 and 1 to integers from 0-255."
+,func_987_a,,*,setColorOpaque_F,"Sets the RGB values as specified, converting from floats between 0 and 1 to integers from 0-255."
+,func_988_c,,*,setTranslationF,Sets the translation for all vertices in the current draw call. (F suffix indicates float parameters)
+,func_989_c,,*,disableColor,Disables colors for the current draw call.
+,func_990_b,,*,setColorOpaque_I,Sets the color to the given opaque value (stored as byte values packed in an integer).
+,func_991_a,,*,addVertex,"Adds a vertex with the specified x,y,z to the current draw call. It will trigger a draw() if the buffer gets full."
+,func_992_a,,*,startDrawing,Resets tessellator state and prepares for drawing (with the specified draw mode).
+,func_6513_a,,*,setColorRGBA_I,Sets the color to the given color (packed as bytes in integer) and alpha values.
+iy (ScaledResolution),func_902_b,,*,getScaledHeight
+iy (ScaledResolution),func_903_a,,*,getScaledWidth
+iz (BlockLeaves),func_310_a,,*,setGraphicsLevel,"Pass true to draw this block using fancy graphics, or false for fast graphics."
+jd (EntityTNTPrimed),func_409_i,fw,func_178_b,explode
+jf (NextTickListEntry),func_899_a,bv (NextTickListEntry),func_734_a,comparer,Compares this tick entry to another tick entry for sorting purposes. Compared first based on the scheduled time and second based on tickEntryID.
+jf (NextTickListEntry),func_900_a,bv (NextTickListEntry),func_733_a,setScheduledTime,Sets the scheduled time for this tick entry
+jq (GuiSelectWorld),func_586_d,,*,getWorldName,Returns the name of the selected world.
+kd (FontRenderer),func_871_a,,*,getStringWidth,Returns the width of this string. Equivalent of FontMetrics.stringWidth(String s).
+kd (FontRenderer),func_872_a,,*,renderString,The actual rendering takes place here.
+kd (FontRenderer),func_873_b,,*,drawString,Draws the specified string.
+kd (FontRenderer),func_874_a,,*,drawStringWithShadow,Draws the specified string with a drop shadow.
+kh (Entity),func_347_a,dj (Entity),func_86_a,setPosition,"Sets the x,y,z of the entity from the given parameters. Also seems to set up a bounding box."
+kh (Entity),func_348_f,dj (Entity),func_87_f,addVelocity,"Adds to the current velocity of the entity. Args: x, y, z"
+kh (Entity),func_349_c,dj (Entity),func_88_c,moveEntity,"Tries to moves the entity by the passed in displacement. Args: x, y, z"
+kh (Entity),func_352_a,dj (Entity),func_97_a,writeEntityToNBT,(abstract) Protected helper method to write subclass entity data to NBT.
+kh (Entity),func_353_a,dj (Entity),func_122_m,interact,"Called when a player interacts with a mob. e.g. gets milk from a cow, gets into the saddle on a pig."
+kh (Entity),func_357_b,dj (Entity),func_99_b,readEntityFromNBT,(abstract) Protected helper method to read subclass entity data from NBT.
+kh (Entity),func_360_d,dj (Entity),func_101_d,getDistanceSq,"Gets the squared distance to the position. Args: x, y, z"
+kh (Entity),func_361_e,dj (Entity),func_103_e,getDistance,"Gets the distance to the position. Args: x, y, z"
+kh (Entity),func_363_d,dj (Entity),func_98_d,writeToNBT,Save the entity to NBT (calls an abstract helper method to write extra data)
+kh (Entity),func_367_b,dj (Entity),func_128_a,dropItem,"Drops an item stack at the entity's position. Args: itemID, count"
+kh (Entity),func_368_e,dj (Entity),func_100_e,readFromNBT,Reads the entity from NBT (calls an abstract helper method to read specialized data)
+kh (Entity),func_370_e_,dj (Entity),func_106_b_,onUpdate,Called to update the entity's position/logic.,,--
+kh (Entity),func_371_a,dj (Entity),func_113_a,setSize,"Sets the width and height of the entity. Args: width, height"
+kh (Entity),func_376_c,dj (Entity),func_6096_b,setRotation,Sets the rotation of the entity
+kh (Entity),func_378_a,*,*,setPositionAndRotation2,"Sets the position and rotation. Only difference from the other one is no bounding on the rotation. Args: posX, posY, posZ, yaw, pitch"
+kh (Entity),func_379_d,dj (Entity),func_94_a,getDistanceToEntity,Returns the distance to the entity. Args: entity
+kh (Entity),func_380_f,dj (Entity),func_92_c,applyEntityCollision,Applies a velocity to each of the entities pushing them away from each other. Args: entity
+kh (Entity),func_382_a,dj (Entity),func_108_b,getEntityBrightness,Gets how bright this entity is.
+kh (Entity),func_386_g,*,*,mountEntity,"Called when a player mounts an entity. e.g. mounts a pig, mounts a boat.",,--
+kh (Entity),func_387_e,dj (Entity),func_102_b,getDistanceSqToEntity,Returns the squared distance to the entity. Args: entity
+kh (Entity),func_393_a,dj (Entity),func_110_a,isInsideOfMaterial,Checks if the current block the entity is within of the specified material type
+kh (Entity),func_394_a,dj (Entity),func_123_a,dropItemWithOffset,"Drops an item stack with a specified y offset. Args: itemID, count, yOffset"
+kh (Entity),func_395_F,dj (Entity),func_118_j,setEntityDead,Will get destroyed next tick
+kh (Entity),func_396_a,dj (Entity),func_121_a,attackEntity,Called when the entity is attacked.
+kh (Entity),func_397_g_,dj (Entity),func_119_o,handleWaterMovement,Returns if this entity is in water and will end up adding the waters velocity to the entity
+kh (Entity),func_398_a,*,*,setWorld,Sets the reference to the World object.
+kh (Entity),func_399_b,dj (Entity),func_6095_b,setPositionAndRotation,"Sets the entity's position and rotation. Args: posX, posY, posZ, yaw, pitch"
+kh (Entity),func_400_c,dj (Entity),func_114_a,fall,Called when the mob is falling. Calculates and applies fall damage.
+kh (Entity),func_6375_a,*,*,setVelocity,"Sets the velocity to the args. Args: x, y, z"
+kh (Entity),func_6378_b,dj (Entity),func_6093_b,onCollideWithPlayer,Called by a player entity when they collide with an entity
+ki (NBTTagList),func_740_c,*,func_387_b,tagCount,Returns the number of tags in the list.
+ki (NBTTagList),func_741_a,*,func_388_a,tagAt,Retrieves the tag at the specified index from the list.
+ki (NBTTagList),func_742_a,*,func_386_a,setTag,Adds the provided tag to the end of the list. There is no check to verify this tag is of the same type as any previous tag.
+lb (NetHandler),func_819_a,ej (NetHandler),func_24_a,handlePlace
+lb (NetHandler),func_820_a,ej (NetHandler),func_10_a,handleNamedEntitySpawn
+lb (NetHandler),func_821_a,ej (NetHandler),func_26_a,handleBlockDig
+lb (NetHandler),func_822_a,ej (NetHandler),func_12_a,handleBlockChange
+lb (NetHandler),func_823_a,ej (NetHandler),func_6_a,handleErrorMessage
+lb (NetHandler),func_824_a,ej (NetHandler),func_13_a,handleMultiBlockChange
+lb (NetHandler),func_825_a,ej (NetHandler),func_3_a,handleArmAnimation
+lb (NetHandler),func_826_a,ej (NetHandler),func_29_a,handlePreChunk
+lb (NetHandler),func_827_a,ej (NetHandler),func_30_a,handleEntity
+lb (NetHandler),func_828_a,ej (NetHandler),func_27_a,handleMobSpawn
+lb (NetHandler),func_829_a,ej (NetHandler),func_5_a,handleEntityTeleport
+lb (NetHandler),func_830_a,ej (NetHandler),func_17_a,handleAddToInventory
+lb (NetHandler),func_831_a,ej (NetHandler),func_23_a,handleChat
+lb (NetHandler),func_832_a,ej (NetHandler),func_14_a,handlePickupSpawn
+lb (NetHandler),func_833_a,ej (NetHandler),func_4_a,handleMapChunk
+lb (NetHandler),func_834_a,ej (NetHandler),func_28_a,handleCollect
+lb (NetHandler),func_835_a,ej (NetHandler),func_20_a,handleVehicleSpawn
+lb (NetHandler),func_836_a,ej (NetHandler),func_21_a,handleUnexpected
+lb (NetHandler),func_837_a,ej (NetHandler),func_18_a,handleFlying
+lb (NetHandler),func_838_a,ej (NetHandler),func_19_a,handleHandshake
+lb (NetHandler),func_839_a,ej (NetHandler),func_8_a,handleDestroyEntity
+lb (NetHandler),func_840_a,ej (NetHandler),func_22_a,handleLogin
+lb (NetHandler),func_841_a,ej (NetHandler),func_11_a,handleBlockItemSwitch
+lb (NetHandler),func_842_a,ej (NetHandler),func_9_a,handleComplexEntity
+lb (NetHandler),func_843_a,ej (NetHandler),func_16_a,handlePlayerInventory
+lb (NetHandler),func_844_a,ej (NetHandler),func_7_a,handleKickDisconnect
+lb (NetHandler),func_845_a,ej (NetHandler),func_15_a,handleSpawnPosition
+lb (NetHandler),func_846_a,ej (NetHandler),func_25_a,handleUpdateTime
+lm (Gui),func_547_b,*,*,drawString,Renders the specified text to the screen.
+lm (Gui),func_548_a,*,*,drawCenteredString,"Renders the specified text to the screen, center-aligned."
+lu (GuiIngame),func_557_a,*,*,renderGameOverlay,"Render the ingame overlay with quick icon bar, ..."
+ly (Block),func_207_d,*,*,colorMultiplier,Returns a integer with hex for 0xrrggbb with this color multiplied against the blocks color. Note only called when first determining what to render.
+ly (Block),func_208_a,*,func_221_a,updateTick,Ticks the block if it's been scheduled
+ly (Block),func_209_d,*,func_225_d,canProvidePower,Can this block provide power. Only wire currently seems to have this change based on its state.
+ly (Block),func_210_f,*,*,getRenderType,The type of render function that is called for this block
+ly (Block),func_211_a,*,*,getBlockTexture,"Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side"
+ly (Block),func_212_i,*,func_261_f,unusedMethod,Only used to fill an unused field
+ly (Block),func_213_a,*,func_229_a,setBlockBounds,"Sets the bounds of the block.  minX, minY, minZ, maxX, maxY, maxZ",,--
+ly (Block),func_214_b,*,func_242_b,onBlockRemoval,Called whenever the block is removed.
+ly (Block),func_216_a,*,func_227_a,dropBlockAsItemWithChance,Drops the block items with a specified chance of dropping the specified items
+ly (Block),func_256_d,*,func_258_c,setLightOpacity,Sets how much light is blocked going through this block. Returns the object for convenience in constructing.
+ly (Block),func_215_a,*,func_224_a,setLightValue,Sets the amount of light emitted by a block from 0.0f to 1.0f (converts internally to 0-15). Returns the object for convenience in constructing.
+ly (Block),func_217_b,*,func_240_b,allowsAttachment,"Can a block attach to this one?  Checked by torches, redstone wire, buttons, etc"
+ly (Block),func_218_a,*,func_241_a,getBlockTextureFromSide,Returns the block texture based on the side being looked at.  Args: side
+ly (Block),func_219_a,*,func_232_b,setHardness,Sets the amount of damage required to break a block of this type. Returns the object for convenience in constructing.
+ly (Block),func_221_d,*,func_248_d,getCollisionBoundingBoxFromPool,Returns a bounding box from the pool of bounding boxes (this means this box can change after the pool has been cleared to be reused)
+ly (Block),func_223_g,*,func_220_f,canBlockStay,Can this block stay at this position.  Similar to canPlaceBlockAt except gets checked often with plants.
+ly (Block),func_224_a,*,func_243_a,canCollideCheck,"Returns whether this block is collideable based on the arguments passed in Args: blockMetaData, unknownFlag"
+ly (Block),func_228_c,*,func_238_d,isIndirectlyPoweringTo,Is this block indirectly powering the block on the specified side
+ly (Block),func_229_a,*,func_244_a,quantityDropped,Returns the quantity of items to drop on block destruction.
+ly (Block),func_230_a,*,func_264_a,getCollidingBoundingBoxes,"Adds to the supplied array any colliding bounding boxes with the passed in bounding box. Args: world, x, y, z, axisAlignedBB, arrayList"
+ly (Block),func_231_b,*,func_239_b,isPoweringTo,Is this block powering the block on the specified side
+ly (Block),func_232_a,*,*,getBlockTextureFromSideAndMetadata,"From the specified side and block metadata retrieves the blocks texture. Args: side, metadata"
+ly (Block),func_233_b,*,func_235_b,onBlockClicked,"Called when the block is clicked by a player. Args: x, y, z, entityPlayer"
+ly (Block),func_235_e,*,func_250_e,onBlockAdded,"Called whenever the block is added into the world. Args: world, x, y, z"
+ly (Block),func_240_a,*,func_252_a,idDropped,Returns the ID of the items to drop on destruction.
+ly (Block),func_250_a,*,func_246_a,blockActivated,"Called upon block activation (left or right click on the block.). The three integers represent x,y,z of the block."
+ly (Block),func_246_f,*,*,getSelectedBoundingBoxFromPool,Returns the bounding box of the wired rectangular prism to render.
+ly (Block),func_247_b,*,*,randomDisplayTick,A randomly called display update to be able to add particles or other items for display
+ly (Block),func_226_a,*,func_234_b,onNeighborBlockChange,"Lets the block know when one of its neighbor changes. Doesn't know which neighbor changed (coordinates passed are their own) Args: x, y, z, blockID"
+ly (Block),func_236_b,*,func_263_a,onEntityCollidedWithBlock,"Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity"
+ly (Block),func_238_a,*,func_233_a,setBlockBoundsBasedOnState,"Updates the blocks bounds based on its current state. Args: world, x, y, z"
+ly (Block),func_241_c,*,*,getBlockBrightness,"How bright to render this block based on the light its receiving. Args: iBlockAccess, x, y, z"
+ly (Block),func_242_c,*,*,renderAsNormalBlock,"If this block doesn't render as an ordinary block it will return False (examples: signs, buttons, stairs, etc)"
+ly (Block),func_243_a,*,func_259_a,canPlaceBlockAt,"Checks to see if its valid to put this block at the specified coordinates. Args: world, x, y, z"
+ly (Block),func_244_a,*,func_223_a,isVecInsideYZBounds,Checks if a vector is within the Y and Z bounds of the block. 
+ly (Block),func_245_h,*,func_245_e,isCollidable,"Returns if this block is collidable (only used by Fire). Args: x, y, z"
+ly (Block),func_249_b,*,func_228_b,isVecInsideXZBounds,Checks if a vector is within the X and Z bounds of the block. 
+ly (Block),func_251_c,*,func_236_c,isVecInsideXYBounds,Checks if a vector is within the X and Y bounds of the block. 
+ly (Block),func_252_b,*,func_251_a,onBlockDestroyedByPlayer,"Called right before the block is destroyed by a player.  Args: world, x, y, z, metaData"
+ly (Block),func_253_b,*,func_231_a,setTickOnLoad,Sets whether this block type will tick on loading the block or not
+ly (Block),func_254_a,*,func_249_b,onEntityWalking,"Called whenever an entity is walking on top of this block. Args: world, x, y, z, entity"
+ly (Block),func_255_a,*,func_262_a,collisionRayTrace,"Ray traces through the blocks collision from start vector to end vector returning a ray trace hit. Args: world, x, y, z, startVec, endVec"
+ly (Block),func_257_a,*,func_230_a,velocityToAddToEntity,"Can add to the passed in vector for a movement vector to be applied to the entity. Args: x, y, z, entity, vec3d"
+ly (Block),func_258_d,*,func_255_c,onBlockPlaced,"Called when a block is placed using an item. Used often for taking the facing and figuring out how to position the item. Args: x, y, z, facing"
+ly (Block),func_259_b_,*,func_247_a_,dropBlockAsItem,Drops the specified block items
+ly (Block),func_260_c,*,func_253_a,isSideInsideCoordinate,"Checks to see if the side is within the normal 1 meter cube (if its on the edge its not considered inside).  If an invalid side is given it returns instead the not of allowing attachment (note not actually used in code). Args: blockAccess, x, y, z, side"
+ly (Block),func_4024_a,*,func_256_a,setStepSound,Sets the footstep sound for the block. Returns the object for convenience in constructing.
+ly (Block),func_4025_d,*,func_4028_b,tickRate,How many world ticks before ticking
+ly (Block),func_4026_a,*,func_4027_a,onBlockPlacedBy,"Called when a block is using an item and passed in who placed it. Args: x, y, z, entityLiving"
+ly (Block),func_4027_c,*,func_4029_c,onBlockDestroyedByExplosion,Called upon the block being destroyed by an explosion
+lz (ChunkProviderClient),func_537_a,ij (ChunkProviderServer),func_365_a,chunkExists,"Checks to see if a chunk exists at x, y"
+mm (SlotInventory),func_781_a,*,*,isAtCursorPos,Return True if the cursor position passed as argument is inside the slot.
+mn (GuiConnecting),func_581_a,*,*,isCancelled,"Returns true if the connection attempt has been cancelled, false otherwise."
+mn (GuiConnecting),func_582_a,*,*,setNetClientHandler,Sets the NetClientHandler.
+mn (GuiConnecting),func_583_b,*,*,getNetClientHandler,Gets the NetClientHandler.
+mq (BlockFlower),func_269_b,*,func_277_b,canThisPlantGrowOnThisBlockID,Gets passed in the blockID of the block below and supposed to return true if its allowed to grow on the type of blockID passed in. Args: blockID
+mu (NibbleArray),func_769_a,*,func_560_a,isValid,Returns if the byte array is null or not.
+mu (NibbleArray),func_770_a,*,func_561_a,setNibble,Sets the nibble of data at i << 11 | k << 7 | j to l.
+mu (NibbleArray),func_771_a,*,func_562_a,getNibble,"Returns the nibble of data corresponding to the passed in i,j,k. j is at most 6 bits, k is at most 4. "
+,func_549_a,*,*,drawGradientRect,Draws a rectangle with a vertical gradient between the specified colors.
+,func_550_b,*,*,drawTexturedModalRect,Draws a textured rectangle at the stored z-value.
+,func_551_a,*,*,drawRect,Draws a solid color rectangle with the specified coordinates and color.
+mx (HashEntry),func_767_b,*,*,getValue,Returns the object stored in this entry
+mx (HashEntry),func_768_a,*,*,getHash,Returns the hash code for this entry
+net/minecraft/client/Minecraft,func_106_b,*,*,getDataFolder,Gets the minecraft directory.
+net/minecraft/client/Minecraft,func_109_d,*,*,shutdown,"Called when the window is closing. Sets ""running"" to false which allows the game loop to exit cleanly."
+net/minecraft/client/Minecraft,func_110_a,*,*,handleException,Creates a new crash report and displays it in the main window.
+net/minecraft/client/Minecraft,func_112_q,*,*,getOs
+net/minecraft/client/Minecraft,func_115_a,*,*,resize,Called to resize the current screen.
+net/minecraft/client/Minecraft,func_116_c,*,*,checkGLError,"Checks for an OpenGL error. If there is one, prints the error ID and error string."
+net/minecraft/client/Minecraft,func_124_j,*,*,isMultiplayerWorld,"Checks if the current world is a multiplayer world, returns true if it is, false otherwise."
+net/minecraft/client/Minecraft,func_126_o,*,*,respawn,Called when the respawn button is pressed after the player dies.
+net/minecraft/client/Minecraft,func_128_a,*,*,loadScreen,Displays a new screen.
+net/minecraft/client/Minecraft,func_129_t,*,*,forceReload,Forces a reload of the sound manager and all the resources. Called in game by holding 'F3' and pressing 'S'.
+net/minecraft/client/Minecraft,func_131_a,*,*,installResource,Installs a resource. Currently only sounds are download so this method just adds them to the SoundManager.
+net/minecraft/client/Minecraft,func_133_h,*,*,toggleFullscreen,Toggles fullscreen mode.
+net/minecraft/client/MinecraftApplet,func_102_b,*,*,shutdown,Called when the applet window is closed.
+nm (IBlockAccess),func_599_f,hq,func_443_c,getBlockMaterial,Returns the block's material.
+nm (IBlockAccess),func_600_a,hq,func_444_a,getBlockId,"Returns the block ID at coords x,y,z"
+nm (IBlockAccess),func_602_e,hq,func_446_b,getBlockMetadata,"Returns the block metadata at coords x,y,z"
+of (SoundManager),func_330_b,*,*,closeMinecraft,Called when Minecraft is closing down.
+of (SoundManager),func_332_a,*,*,addSound,Adds an audio file to the sounds SoundPool.
+of (SoundManager),func_333_b,*,*,addStreaming,Adds an audio file to the streaming SoundPool.
+of (SoundManager),func_334_c,*,*,addMusic,Adds an audio file to the music SoundPool.
+og (BlockFire),func_261_b,il,func_269_b,canBlockCatchFire,"Checks the specified block coordinate to see if it can catch fire.  Args: blockAccess, x, y, z"
+og (BlockFire),func_262_i,il,func_270_h,getChanceOfNeighborsEncouragingFire,Gets the highest chance of a neighbor block encouraging this block to catch fire
+og (BlockFire),func_264_a,il,func_267_a,setBurnRate,"Sets the burn rate for a block. The larger abilityToCatchFire the more easily it will catch on fire Args: blockID, unknown1, abilityToCatchFire"
+og (BlockFire),func_265_g,il,func_265_f,getChanceToEncourageFire,"Retrieves a specified block's chance to encourage their neighbors to burn and if the number is greater than the current number passed in it will return its number instead of the passed in one.  Args: world, x, y, z, curChanceToEncourageFire"
+og (BlockFire),func_266_a,il,func_266_a,tryToCatchBlockOnFire,"Rolls a random number to see if the block coordinates specified will catch fire. Will catch fire if random.nextInt(fireRange)<abilityToCatchFire Args: world, x, y, z, fireRange, random"
+om (WorldProvider),func_4093_b,ie (WorldProvider),func_4088_b,generateLightBrightnessTable,Creates the light to brightness table
+(BlockPortal),func_4032_a_,(BlockPortal),func_4030_a_,tryToCreatePortal,"Checks to see if this location is valid to create a portal and will return True if it does. Args: world, x, y, z"
+v (NoiseGeneratorPerlin),func_802_a,af (NoiseGeneratorPerlin),func_643_a,generateNoise
+v (NoiseGeneratorPerlin),func_803_a,af (NoiseGeneratorPerlin),func_644_a,grad
+v (NoiseGeneratorPerlin),func_804_b,af (NoiseGeneratorPerlin),func_645_b,lerp
+*,*,cq (PropertyManager),func_720_a,getStringProperty,Returns a string property. If the property doesn't exist the default is returned.,,--
+*,*,cq (PropertyManager),func_721_b,saveProperties,Writes the properties to the properties file.,,DUPLICATE
+*,*,cq (PropertyManager),func_722_a,getIntProperty,Returns an integer property. If the property doesn't exist the default is returned.,,--
+*,*,cq (PropertyManager),func_723_a,generateNewProperties,Generates a new properties file.,,--
+*,*,cq (PropertyManager),func_724_a,getBooleanProperty,Returns a boolean property. If the property doesn't exist the default is returned.,,--
+*,*,dw (IUpdatePlayerListBox),func_690_a,update,Updates the Jlist with a new model.,,DUPLICATE
+*,*,ea (PlayerNBTManager),func_725_b,readPlayerData,Reads the player data from disk into the specified PlayerEntityMP.,,DUPLICATE
+*,*,ea (PlayerNBTManager),func_726_a,writePlayerData,Writes the player data to disk from the specified PlayerEntityMP.,,DUPLICATE
+*,*,ef (ICommandListener),func_1_c,getUsername,Gets the players username.,,DUPLICATE
+*,*,ef (ICommandListener),func_2_b,log,Logs the message with a level of INFO.,,DUPLICATE
+*,*,ew (NetLoginHandler),func_31_a,setLoginPacket,Sets and returns the login packet provided.,,DUPLICATE
+*,*,ew (NetLoginHandler),func_32_a,getServerId,Returns the server Id randomly generated by this login handler.,,DUPLICATE
+*,*,ew (NetLoginHandler),func_33_a,tryLogin,"Logs the user in if a login packet is found, otherwise keeps processing network packets unless the timeout has occurred.",,DUPLICATE
+*,*,ew (NetLoginHandler),func_34_b,kickUser,Disconnects the user with the given reason.,,DUPLICATE
+*,*,ew (NetLoginHandler),func_35_b,getUserAndIPString,Returns the user name (if any) and the remote address as a string.,,DUPLICATE
+*,*,ew (NetLoginHandler),func_36_b,doLogin,Processes the login packet and sends response packets to the user.,,DUPLICATE
+*,*,fk (ConsoleLogManager),func_641_a,init,Initialises the console logger.,,DUPLICATE
+*,*,fo (ServerGui),func_44_a,getMinecraftServer,Returns the MinecraftServer associated with the ServerGui.,,DUPLICATE
+*,*,fo (ServerGui),func_45_a,getStatsComponent,Returns a new JPanel with a new GuiStatsComponent inside.,,--
+*,*,fo (ServerGui),func_46_a,initGui,Initialises the GUI components.,,--
+*,*,fo (ServerGui),func_47_d,getLogComponent,Returns a new JPanel with a new GuiStatsComponent inside.,,DUPLICATE
+*,*,fo (ServerGui),func_48_b,getPlayerListComponent,Returns a new JScrollPane with a new PlayerListBox inside.,,DUPLICATE
+*,*,ft (ServerConfigurationManager),func_612_j,writeOps,Writes the OPs file to disk.,,DUPLICATE
+*,*,ft (ServerConfigurationManager),func_614_d,removeBannedIP,Removes an IP from the banned list.,,--
+*,*,ft (ServerConfigurationManager),func_615_a,addBannedPlayer,Adds a player to the banned list.,,--
+*,*,ft (ServerConfigurationManager),func_616_c,playerLoggedOut,Called when a player disconnects from the game. Writes player data to disk and removes them from the world.,,--
+*,*,ft (ServerConfigurationManager),func_619_a,login,Called when a player tries to login. Checks whether they are banned/server is full etc.,,--
+*,*,ft (ServerConfigurationManager),func_623_e,readBannedPlayers,Reads the banned players file from disk.,,DUPLICATE
+*,*,ft (ServerConfigurationManager),func_624_e,addOp,Adds a player to the OP list.,,--
+*,*,ft (ServerConfigurationManager),func_625_b,removeBannedPlayer,Removes a player from the banned list.,,--
+*,*,ft (ServerConfigurationManager),func_626_f,writeBannedPlayers,Writes the banned players file to disk.,,--
+*,*,ft (ServerConfigurationManager),func_627_a,playerLoggedIn,Called when a player successfully logs in. Reads player data from disk and inserts the player into the world.,,--
+*,*,ft (ServerConfigurationManager),func_629_g,readBannedIPs,Reads the banned IPs file from disk.,,--
+*,*,ft (ServerConfigurationManager),func_632_f,removeOp,Removes a player from the OP list.,,--
+*,*,ft (ServerConfigurationManager),func_634_c,addBannedIP,Adds an IP to the banned list.,,--
+*,*,ft (ServerConfigurationManager),func_635_h,writeBannedIPs,Writes the banned IPs file to disk.,,DUPLICATE
+*,*,ft (ServerConfigurationManager),func_638_i,readOps,Reads the OPs file from disk.,,DUPLICATE
+*,*,ft (ServerConfigurationManager),func_639_g,isOp,"Returns true if the player is an OP, false otherwise.",,--
+*,*,hf (MCHashTable),func_556_b,containsItem,Returns true if this hash table contains the specified item.,,DUPLICATE
+*,*,hf (MCHashTable),func_548_c,lookupEntry,Returns the internal entry for a key,,DUPLICATE
+*,*,hg (PlayerManager),func_540_a,getMinecraftServer,Returns the MinecraftServer associated with the PlayerManager.,,DUPLICATE
+*,*,hx (GuiStatsComponent),func_435_a,update,Public static accessor to call updateStats.,,--
+*,*,hx (GuiStatsComponent),func_436_a,updateStats,Updates the stat values and calls paint to redraw the component.,,DUPLICATE
+*,*,id (NetServerHandler),func_39_b,sendPacket,Adds the packet to the underlying network manager's send queue.,,DUPLICATE
+*,*,MinecraftServer,func_49_a,addCommand,Adds a command to the command list for processing.,--,--
+*,*,MinecraftServer,func_51_a,getFile,Returns a File object from the specified string.,,DUPLICATE
+*,*,MinecraftServer,func_63_b,commandLineParser,Parse the command line and call the corresponding action.,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+,,,,,,,DUPLICATE
+
+
+
+[1] One or more of this result's entries may not be displayed. Select this cell and press Ctrl-R to show them.
