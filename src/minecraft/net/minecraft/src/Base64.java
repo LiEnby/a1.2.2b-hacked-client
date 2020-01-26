@@ -1,4 +1,4 @@
-package util;
+package net.minecraft.src;
 
 import java.util.Arrays;
 

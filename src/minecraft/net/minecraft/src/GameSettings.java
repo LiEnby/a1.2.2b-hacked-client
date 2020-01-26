@@ -245,15 +245,15 @@ public class GameSettings
                 String as[] = s.split(":");
                 if(as[0].equals("music"))
                 {
-                    musicVolume = parseFloat(as[1]);
+                    musicVolume = parseFloat_00(as[1]);
                 }
                 if(as[0].equals("sound"))
                 {
-                    soundVolume = parseFloat(as[1]);
+                    soundVolume = parseFloat_00(as[1]);
                 }
                 if(as[0].equals("mouseSensitivity"))
                 {
-                    mouseSensitivity = parseFloat(as[1]);
+                    mouseSensitivity = parseFloat_00(as[1]);
                 }
                 if(as[0].equals("invertYMouse"))
                 {
@@ -307,7 +307,7 @@ public class GameSettings
         }
     }
 
-    private float parseFloat(String s)
+    private float parseFloat_00(String s)
     {
         if(s.equals("true"))
         {

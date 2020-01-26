@@ -270,6 +270,8 @@ public class GuiChat extends GuiScreen
 
                         mc_06.field_6322_g.motionX = diffX / 2.20264376874048D;
                         mc_06.field_6322_g.motionZ = diffZ / 2.20264376874048D;
+
+                        mc_06.field_6322_g.spd = 1.0F;
                         mc_06.field_6322_g.fly = true;
 
                     }

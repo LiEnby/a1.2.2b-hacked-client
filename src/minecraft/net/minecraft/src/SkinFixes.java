@@ -1,7 +1,5 @@
 package net.minecraft.src;
 
-import org.lwjgl.Sys;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -38,7 +36,7 @@ public class SkinFixes {
             int profileEnd = profileJson.substring(profileStart).indexOf("\"}]}")+profileStart;
             String b64Json = profileJson.substring(profileStart,profileEnd);
 
-            String skinJson = new String(util.Base64.decode(b64Json));
+            String skinJson = new String(Base64.decode(b64Json));
             int skinStart = skinJson.indexOf("{\"SKIN\":{\"url\":\"")+16;
             int skinEnd = skinJson.substring(skinStart).indexOf("\"")+skinStart;
 
